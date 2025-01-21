@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/conan_epi2.rpy", line 187: 'Show' is not a keyword argument or valid child of the screen statement.
+    Show("fixed_button")
+        ^
+
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Tue Jan 21 14:33:14 2025

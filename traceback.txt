@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/conan_epi2.rpy", line 209, in script
+    jump quiz_wide
+ScriptError: could not find label 'quiz_wide'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/conan_epi2.rpy", line 209, in script
+    jump quiz_wide
+  File "C:\Users\user\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1705, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\user\Downloads\renpy-8.3.4-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'quiz_wide'.
+
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.3.4.24120703
+go2manga 1.0
+Tue Jan 21 14:26:12 2025
