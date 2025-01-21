@@ -1,0 +1,9 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/mystery1.rpy", line 90: is not terminated with a newline. (Check strings and parenthesis.)
+            action [
+
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Tue Jan 21 20:46:36 2025
