@@ -27,15 +27,11 @@ default investigation_state = {
 
 # 선택지 진행 상태
 default choice_state = {
-    "water_1": False,
-    "water_2": False,
     "door_1": False,
     "door_2": False,
     "window_1": False,
     "window_2": False
 }
-
-default completed_choices = 0
 
 # script.rpy
 label mystery1:
@@ -109,7 +105,7 @@ screen mystery1_investigation():
     else:
         # main_done == 5인 경우
         # 세부조사도 다 끝났는지 체크하고, 끝났다면 자동으로 넘어가게 할 수도 있음
-        if sub_done < 6:  # 예: choice_state가 6개라면
+        if sub_done < 4:  # 예: choice_state가 6개라면
             textbutton "조사 종료" action Show("investigation_end_done") xpos 50 ypos 100
         else:
             textbutton "조사 종료" action Show("investigation_end_done") xpos 50 ypos 100
@@ -275,11 +271,9 @@ label water_scene_label:
         "물을 맛 본다.":
             show scene90
             character_conan "이 비릿한 짠맛은?!!"
-            $ choice_state["water_1"] = True  # 세부 선택지 True
         "냄새를 맡아본다.":
             show scene90
-            character_conan "축축한 공기 속에 스며든 이 비릿한 향기... 뭐지?!"
-            $ choice_state["water_2"] = True  # 세부 선택지 True
+            character_conan "축축한 공기 속에 스며든 이 비릿한 냄새... 뭐지?!"
 
     scene black
     call screen mystery1_investigation

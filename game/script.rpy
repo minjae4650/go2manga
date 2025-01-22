@@ -23,6 +23,8 @@ label start:
             jump conan_start  # conan_start로 이동
         "추리하러가기":
             jump mystery1
+        "2편":
+            jump conan_start2
         "게임 종료":
             return  # 게임 종료
 

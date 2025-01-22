@@ -126,6 +126,13 @@ image scene98 = im.Scale("images/scenes/scene98.png", 1500, 1080)
 image scene99 = im.Scale("images/scenes/scene99.png", 1500, 1080)
 image scene100 = im.Scale("images/scenes/scene100.png", 1500, 1080)
 
+image scene101 = im.Scale("images/scenes/scene101.png", 1500, 1080)
+image scene102 = im.Scale("images/scenes/scene102.png", 1500, 1080)
+image scene103 = im.Scale("images/scenes/scene103.png", 1500, 1080)
+image scene104 = im.Scale("images/scenes/scene104.png", 1500, 1080)
+image scene105 = im.Scale("images/scenes/scene105.png", 1500, 1080)
+image scene106 = im.Scale("images/scenes/scene106.png", 6489 * 1080 // 2475, 1080)
+
 image character_kogoro = im.Scale("images/character_kogoro01.png", 586*1.5, 426*1.5)
 image character_ran = im.Scale("images/character_ran.png", 207*2.5, 243*2.5)
 
@@ -230,7 +237,7 @@ label mystery_introduction:
     
     character_ran "편지에는 이렇게 적혀 있었어."
     show letter with fade
-    character_ran "다음 만월의 밤, {color=#ff4500}츠키카게 섬{/color}에서 다시 그림자가 기울기 시작할 거요. 조사해주시길...\n - {color=#ff4500}아소 케이지{/color}"
+    character_ran "다음 만월의 밤, {color=#ff4500}츠키카게 섬{/color}에서 다시 그림자가 사라지기 시작할 거요. 조사해주시길...\n - {color=#ff4500}아소 케이지{/color}"
 
     character_conan "({color=#ff4500}츠키카게 섬{/color}...? 그리고 {color=#ff4500}아소 케이지{/color}...? 뭔가 익숙한 느낌인데...)"
     "나는 머릿속에서 이 이름들을 되새기며 상황을 정리하려고 애썼다."
@@ -660,6 +667,8 @@ label story2:
         character_narumi "그래서 향이라도.."
         character_kogoro "아, 실례했습니다. 의사선생님인줄 몰라 봤네요."
         character_narumi "괜찮아요. 다들 그렇게 오해들 하시는걸요"
+        $ character_narumi = Character("아사이 나루미")  # 이름을 업데이트
+        character_narumi "정식으로 인사드릴게요. 저는 아사이 나루미. 전에 봤던 병원에서 의사로 있답니다."
 
     else:
         show scene59
@@ -674,12 +683,13 @@ label story2:
 
     show scene60
     character_narumi "아, 이 쪽은 시미즈 씨에요!"
-    character_narumi "아까 거기서 같이 왔어요."
+    character_narumi "아까 병원 쪽에서 만나서 같이 왔어요."
 
     show scene61
     character_simizu "처음 뵙겠습니다. 시미즈 입니다. 반갑습니다."
 
     show scene62 with fade
+    "구민회관 현관"
     character_conan "뭔가 이상해.."
     # 피아노를 쳤을 때 나올것.
 
@@ -789,8 +799,173 @@ label story2:
     jump mystery1
 
 label mystery1_finish:
+    $ main_done = sum(1 for v in investigation_state.values() if v)
+
     stop music
     stop sound
     scene black
-    "조사 끝났어!"
-    return
+    show scene95
+    character_narumi "사망 추정 시각은 30분에서 1시간 전."
+    character_narumi "사인은 질식사겠죠."
+
+    # 사망 원인 추리
+    "가와시마 씨의 사인은 무엇이지?"
+    menu:
+        "익사했다.":
+            pass
+        "둔기에 의해 사망했다.":
+            character_conan "둔기에 의한 사망했다는 증거가 전혀 없어.."
+            jump mystery1_finish
+        "과로사이다.":
+            character_conan "과로사했을 수도 있지만, 증거가 전혀 없어.."
+            jump mystery1_finish
+        "심장마비에 의해 사망했다.":
+            character_conan "심장마비에 의해 사망했다는 증거가 전혀 없어.."
+            jump mystery1_finish
+        "자살이다.":
+            character_conan "자살했다는 증거가 전혀 없어.."
+            jump mystery1_finish
+    
+    show scene96
+    character_narumi "아마도 가와시마 씨는"
+    character_narumi "익사한 것 같아요."
+    character_kogoro "물에 빠뜨린 건가.."
+    character_narumi "해부해보기 전엔 단정할 수 없지만.."
+
+    # 익사 장소 추리
+    "가와시마 씨는 어디에서 익사했을까?"
+    menu:
+            "강":
+                character_conan "이 주변에는 강이 없어..!"
+                jump mystery1_finish
+            "바다":
+                pass
+            "저수지":
+                character_conan "이 주변에는 저수지는 없어..!"
+                jump mystery1_finish
+            "목욕탕":
+                character_conan "목욕탕이 진정 맞을까..?"
+                jump mystery1_finish
+
+    show scene97
+    character_conan "나루미 선생님 말이 맞는 것 같아요."
+
+    # 코난 추리
+    if choice_state["window_2"]:
+        scene black
+        show scene87
+        character_conan "보세요, 밖의 바닷가에 웃옷이.."
+        character_conan "분명히 저거 가와시마 씨 옷일 거에요."
+    
+    if investigation_state["water"]:
+        scene black
+        show scene88
+        character_conan "바다로 이어지는 이 문에서 피아노 근처까지 끌린 자국이 있고.."
+
+    if investigation_state["person"]: 
+        scene black 
+        show scene88
+        character_conan "가와시마 씨의 등에는 진흙과 모래가 묻어 있어요."
+    
+    if choice_state["door_1"] and choice_state["window_1"]:
+        scene black
+        show scene92
+        character_conan "그리고 이 문과 방 창문은 모두 잠겨 있고,"
+    
+    if investigation_state["radio"]:
+        scene black
+        show scene93
+        character_conan "녹음 테이프의 앞 부분이 몇 분간 공백으로 되어 있는 점으로 봐서.."
+
+    # 다 조사 했을 경우
+    if main_done == 5 and choice_state["door_1"] and choice_state["window_1"] and choice_state["window_2"]:
+        show scene98
+        character_kogoro "이, 이 녀석이 언제.."
+        
+        show scene99
+        character_conan "아마도 범인은"
+
+        show scene100
+        character_conan "제사 도중에 가와시마 씨를 바다로 데리고 가 익사시켜서"
+
+        show scene101
+        character_conan "시체를 이 방으로 옮긴 뒤"
+
+        show scene102
+        character_conan "문을 잠그고 테이프 레코더의 스위치를 누른 뒤 복도로 나갔다.."
+
+        show scene103
+        character_conan "그렇죠? 아저씨!"
+        character_kogoro "아! 그래! 그렇지!!"
+
+        show scene104
+        character_kogoro "이 방 문이 잠겨 있었다면"
+
+        show scene62
+        character_kogoro "현관에는 계~속 우리가 있었으니"
+        character_kogoro "범인은 제사 드리는 곳으로 돌아갔을 가능성이 높아."
+
+
+    # 모리 코고로 추가 추리
+    else:
+        scene black
+        show scene104
+        character_kogoro "그리고 추가적으로 얘기를 하면"
+        if choice_state["window_2"] == False: 
+            scene black
+            show scene87
+            character_kogoro "밖의 바닷가에 웃옷이 있습니다."
+            character_kogoro "분명히 저거 가와시마 씨 옷이겠지요."
+        
+        if investigation_state["water"] == False: 
+            scene black
+            show scene88
+            character_kogoro "바다로 이어지는 이 문에서 피아노 근처까지 끌린 자국이 있고.."
+
+        if investigation_state["person"] == False: 
+            scene black
+            show scene88
+            character_kogoro "가와시마 씨의 등에는 진흙과 모래가 묻어 있습니다."
+        
+        if choice_state["door_1"] == False or choice_state["window_1"] == False: 
+            scene black
+            show scene92
+            character_kogoro "이 문과 방 창문은 모두 잠겨 있습니다."
+        
+        if investigation_state["radio"] == False:
+            scene black
+            show scene80
+            character_kogoro "녹음 테이프의 앞 부분이 몇 분간 공백으로 되어 있는 점으로 봐서.."
+
+        scene black
+        show scene104
+        character_kogoro "종합해보면"
+
+        scene black
+        show scene99
+        character_kogoro "아마도 범인은"
+
+        show scene100
+        character_kogoro "제사 도중에 가와시마 씨를 바다로 데리고 가 익사시켜서"
+
+        show scene101
+        character_kogoro "시체를 이 방으로 옮긴 뒤"
+        
+        show scene102
+        character_kogoro "문을 잠그고 테이프 레코더의 스위치를 누른 뒤 복도로 나갔다라고 할 수 있지."
+        
+        show scene62
+        character_kogoro "이 방 문이 잠겨 있었다면"
+        character_kogoro "현관에는 계~속 우리가 있었으니"
+        character_kogoro "범인은 제사 드리는 곳으로 돌아갔을 가능성이 높아."
+
+    show scene105
+    people "자, 잠깐만요!"
+    people "범인이 아직 이 안에 있다는 거에요?"
+
+    scene black
+    show scene106:
+        linear 4 xpos 1920-2831
+    "(웅성웅성)"
+
+    jump conan_start2
