@@ -2,9 +2,77 @@
 errors listed below, and try again.
 
 
-File "game/conan_epi2.rpy", line 187: 'Show' is not a keyword argument or valid child of the screen statement.
-    Show("fixed_button")
-        ^
+The label conan_epi2 is defined twice, at File "game/conan_epi2.rpyc", line 101:
+
+and File "game/conan_epi2_1.rpy", line 87:
+label conan_epi2:
+
+
+The label answer_input is defined twice, at File "game/conan_epi2.rpyc", line 178:
+
+and File "game/conan_epi2_1.rpy", line 164:
+label answer_input:
+
+
+The label london_bridge is defined twice, at File "game/conan_epi2.rpyc", line 190:
+
+and File "game/conan_epi2_1.rpy", line 176:
+label london_bridge:
+
+
+The label hand_of_devil is defined twice, at File "game/conan_epi2.rpyc", line 220:
+
+and File "game/conan_epi2_1.rpy", line 206:
+label hand_of_devil:
+
+
+The label after_tree_ring is defined twice, at File "game/conan_epi2.rpyc", line 369:
+
+and File "game/conan_epi2_1.rpy", line 355:
+label after_tree_ring:
+
+
+The label spotted_strap is defined twice, at File "game/conan_epi2.rpyc", line 395:
+
+and File "game/conan_epi2_1.rpy", line 381:
+label spotted_strap:
+
+
+The label foot_of_walton is defined twice, at File "game/conan_epi2.rpyc", line 428:
+
+and File "game/conan_epi2_1.rpy", line 414:
+label foot_of_walton:
+
+
+The label maze_start is defined twice, at File "game/conan_epi2.rpyc", line 453:
+
+and File "game/conan_epi2_1.rpy", line 439:
+label maze_start:
+
+
+The label maze_fail is defined twice, at File "game/conan_epi2.rpyc", line 498:
+
+and File "game/conan_epi2_1.rpy", line 484:
+label maze_fail:
+
+
+The label maze_success is defined twice, at File "game/conan_epi2.rpyc", line 506:
+
+and File "game/conan_epi2_1.rpy", line 492:
+label maze_success:
+
+
+The label vallet_of_weissmuller is defined twice, at File "game/conan_epi2.rpyc", line 514:
+
+and File "game/conan_epi2_1.rpy", line 500:
+label vallet_of_weissmuller:
+
+
+The label double_headed_arrow is defined twice, at File "game/conan_epi2.rpyc", line 519:
+
+and File "game/conan_epi2_2.rpy", line 77:
+label double_headed_arrow:
+
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Tue Jan 21 14:33:14 2025
+Wed Jan 22 21:40:17 2025
