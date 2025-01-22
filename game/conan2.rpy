@@ -169,7 +169,7 @@ image scenes2_153 = im.Scale("images/scenes2/scenes2_153.png", 1500, 1080)
 image scenes2_154 = im.Scale("images/scenes2/scenes2_154.png", 1500, 1080)
 image scenes2_155 = im.Scale("images/scenes2/scenes2_155.png", 1500, 1080)
 image scenes2_156 = im.Scale("images/scenes2/scenes2_156.png", 1500, 1080)
-image scenes2_157 = im.Scale("images/scenes2/scenes2_157.png", 1500, 1080)
+image scenes2_157 = im.Scale("images/scenes2/scenes2_157.png", 1500, 5882 * 1500 // 3399)
 image scenes2_158 = im.Scale("images/scenes2/scenes2_158.png", 1500, 1080)
 image scenes2_159 = im.Scale("images/scenes2/scenes2_159.png", 1500, 1080)
 image scenes2_160 = im.Scale("images/scenes2/scenes2_160.png", 1500, 1080)
@@ -210,6 +210,9 @@ define character_megure_2 = Character('경찰관', color="#c8ffc8")
 
 define people = Character('주민', color="#c8ffc8")
 define idonknow = Character('???', color="#c8ffc8")
+
+default select_light = 0 # 월광의 의미
+default select_moonlight = False # 월광
 
 # $ character_narumi = Character("아사이 나루미")  # 이름을 업데이트
 label conan_start2:
@@ -419,9 +422,33 @@ label conan_start2:
 
     character_conan "('사라지기 시작한다'고..)"
     character_conan "(그렇다면..)"
-    menu:
-        "~~~~~~"
     character_conan "(이걸로 끝이 아니라는 거야!)"
+
+    "그림자가 사라진다는 의미가 뭘까?"
+    menu:
+        "숨겨진 진실이 드러난다는 의미":
+            $ select_light = 1
+            character_conan "그림자가 사라진다는 건 숨겨져 있던 진실이 드러난다는 뜻일지도 몰라."
+            character_conan "과거의 비밀이 이 사건과 연결된 걸까?"
+
+        "누군가의 존재가 사라진다는 의미":
+            $ select_light = 3
+            character_conan "혹시 '그림자'는 사람을 지칭하는 걸까?"
+            character_conan "누군가가 또 사라질 거라는 경고일지도 몰라."
+
+        "빛에 둘러싸인다는 의미":
+            $ select_light = 4
+            character_conan "그림자와 반대로 빛과 관련된 뜻일 수도 있어..!"
+            character_conan "그럼 빛은 무엇을 뜻하지..?"
+
+            menu:
+                "월광":
+                    $ select_moonlight = True
+                    character_conan "월광은 이 사건과 가장 밀접하게 연결된 단서야."
+
+                "불꽃":
+                    character_conan "불꽃이라..."
+                    character_conan "아소 케이지가 불길 속에서 가족들과 사망했던 그 사건말하는 건가?"
 
     show scenes2_52
     pause 1.5
@@ -432,13 +459,50 @@ label conan_start2:
     character_kogoro "이 편지가 그걸 예고하고 있다는 거냐?"
 
     show scenes2_54
-    character_conan "그림자가 사라진다는 건"
-    character_conan "빛에 계속 둘러싸인다는 거에요"
-    character_conan "빛이라는 건"
-    character_conan "살인 현장에 들렸던 곡인"
-    character_conan "월광 을 말하는 거에요"
-    character_kogoro "그렇구나."
+    if select_light == 4 and select_moonlight:
+        character_conan "그림자가 사라진다는 건"
+        character_conan "빛에 계속 둘러싸인다는 거에요"
+        character_conan "빛이라는 건"
+        character_conan "살인 현장에 들렸던 곡인"
+        character_conan "월광 을 말하는 거에요"
 
+        character_kogoro "그렇구나."
+
+    elif select_light == 4:
+        character_conan "그림자가 사라진다는 건"
+        character_conan "빛에 계속 둘러싸인다는 거에요"
+        character_conan "빛이라는 건"
+        character_conan "아소 케이지 씨가 가족들과 불탄 집에서 사망했던 그 사건과 관련된게 아닐까요?"
+        
+        scene black
+        show scenes2_57
+        character_kogoro "그럼 편지의 빛은 살인 현장에 들렸던 곡인"
+        character_kogoro "월광 을 말하는 걸지도 몰라."
+
+    elif select_light == 3:
+        character_conan "그림자가 사라진다는 건"
+        character_conan "누군가의 존재가 사라진다는 의미일지도 몰라요."
+        character_conan "오늘 사건의 가게야마 씨처럼 관련 인물이 하나씩 사라진다는 뜻 아닐까요?"
+        
+        scene black
+        show scenes2_57
+        character_kogoro "흠.. 그림자가 사라졌다는 뜻은"
+        character_kogoro "그럼 편지의 빛은 살인 현장에 들렸던 곡인"
+        character_kogoro "월광 을 말하는 걸지도 몰라."
+
+    elif select_light == 1:
+        character_conan "그림자가 사라진다는 건"
+        character_conan "숨겨진 진실이 드러난다는 의미일지도 몰라요!"
+
+        character_conan "아소 케이지 씨가 가족들과 불탄 집에서 사망했던 그 사건과 관련된게 아닐까요?"
+        
+        scene black
+        show scenes2_57
+        character_kogoro "흠.. 그림자가 사라졌다는 뜻은"
+        character_kogoro "그럼 편지의 빛은 살인 현장에 들렸던 곡인"
+        character_kogoro "월광 을 말하는 걸지도 몰라."
+
+    scene black
     show scenes2_55
     character_kogoro "12년 전에 아소 씨가 불길 속에서 연주했던 곡도"
 
@@ -508,12 +572,12 @@ label conan_start2:
 
     play sound "moon_light_ran.ogg"
     show scenes2_172
-    pause 4.5
+    pause 5
     show scenes2_171
-    pause 0.8
+    pause 1
 
     show scenes2_72
-    pause 0.8
+    pause 1
 
     show scenes2_73
     pause 0.8
@@ -581,7 +645,14 @@ label conan_start2:
 
     scene black
     show scenes2_87 with fade
-    character_conan "저기요, 그때 뭔가 이상한 점 없었어요?"
+    "나루미 씨에게 그때의 정보를 더 물어보자."
+    menu:
+        "그때 이상한 점이 없었는지 물어보자.":
+            character_conan "저기요, 그때 뭔가 이상한 점 없었어요?"
+        "촌장의 죽음에 대해 더 자세히 물어보자.":
+            character_conan "촌장이 돌아가시던 날, 무언가 이상한 점이 있었나요?"
+        "사건과 관련된 다른 단서가 없는지 물어보자.":
+            character_conan "촌장님의 죽음과 관련된 다른 단서가 더 있을까요?"
 
     show scenes2_88
     character_narumi "글쎄."
@@ -774,27 +845,32 @@ label conan_start2:
     show scenes2_140
     character_conan "어라?"
 
-    show scenes2_141
-    character_ran "에?"
-    character_conan "아, 나, 나 잠깐 화장실"
+    "니시모토 씨는 어디로 가고있을까?"
+    menu:
+        "화장실":
+            show scenes2_141
+            character_ran "에?"
+            character_conan "아, 나, 나 잠깐 화장실"
 
-    show scenes2_142
-    character_conan "어?"
-    show scenes2_143
-    ""
+            show scenes2_142
+            character_conan "어?"
+            show scenes2_143
+            ""
 
-    show scenes2_144
-    character_simizu "응?"
+            show scenes2_144
+            character_simizu "응?"
 
-    show scenes2_145
-    character_conan "어래?"
-    character_conan "지금 니시모토 씨가 오지 않았아요?"
+            show scenes2_145
+            character_conan "어래?"
+            character_conan "지금 니시모토 씨가 오지 않았아요?"
 
-    show scenes2_146
-    character_simizu "아니?"
+            show scenes2_146
+            character_simizu "아니?"
 
-    show scenes2_147
-    character_conan "이런! 계단이야!"
+            show scenes2_147
+            character_conan "이런! 계단이야!"
+        "2층":
+            pass
 
     play music "moon_light_2nd.ogg"
     show scenes2_148
@@ -810,7 +886,7 @@ label conan_start2:
     ""
 
     show scenes2_152
-    character_ran "월광의 제 2악장"
+    character_ran "월광의 제 2악장이야.."
 
     show scenes2_153
     character_megure "어어, 소리 나는 게 어디야?!"
@@ -825,7 +901,13 @@ label conan_start2:
     character_conan "니시모토 씨!"
 
     scene black
-    show scenes2_157
+    show scenes2_157 at Position(xalign = 0.5, yanchor = 0.583815, ypos = 0):
+        linear 2 ypos 1080
+    pause 1.95
+    scene black
+    show scenes2_157 at Position(xalign = 0.5, yanchor = 0.16763, ypos = 0):
+        linear 0.8 ypos 435
+    pause 1.2
 
     scene black
     show scenes2_158
@@ -868,7 +950,6 @@ label conan_start2:
     character_megure "여기 입구는 모두"
     character_megure "경찰들이 지키고 있으니 말이네."
 
-    stop music
     show scenes2_169
     character_conan "(젠장..!!)"
     character_conan "(누구야!!)"

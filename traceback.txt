@@ -1,32 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 193, in script
-    python:
-  File "renpy/common/00start.rpy", line 194, in <module>
-    renpy.execute_default_statement(True)
-  File "game/screens.rpy", line 263, in execute_default
-    default quick_menu = True
-Exception: store.quick_menu is being given a default a second time.
+  File "game/conan2.rpy", line 906, in script
+    show scenes2_157 at Position(xalign = 0.5, yanchor = 0.16763, ypos = 0):
+SyntaxError: invalid syntax (game/conan2.rpy, line 906)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 193, in script
-    python:
-  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00start.rpy", line 194, in <module>
-    renpy.execute_default_statement(True)
-  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\exports\statementexports.py", line 372, in execute_default_statement
-    i.execute_default(start)
-  File "game/screens.rpy", line 263, in execute_default
-    default quick_menu = True
-Exception: store.quick_menu is being given a default a second time.
+  File "game/conan2.rpy", line 906, in script
+    show scenes2_157 at Position(xalign = 0.5, yanchor = 0.16763, ypos = 0):
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1117, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1076, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1076, in <listcomp>
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1207, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1144, in py_compile
+    raise e
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1081, in py_compile
+    raise orig_e
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1073, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/conan2.rpy, line 906)
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.4.24120703
 go2manga 1.0
-Wed Jan 22 01:45:09 2025
+Thu Jan 23 04:12:33 2025
