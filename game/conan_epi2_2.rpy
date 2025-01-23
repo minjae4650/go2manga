@@ -70,10 +70,19 @@ image scene93 = im.Scale("images/scene93.png", 1500, 1080)
 image scene94 = im.Scale("images/scene94.png", 1500, 1080)
 image scene95 = im.Scale("images/scene95.png", 1500, 1080)
 image scene96 = im.Scale("images/scene96.png", 1500, 1080)
-image scene97 = im.Scale("images/scene97.png", 1500, 1080)
-image scene98 = im.Scale("images/scene98.png", 1500, 1080)
-image scene99 = im.Scale("images/scene99.png", 1500, 1080)
-image scene100 = im.Scale("images/scene100.png", 1500, 1080)
+image clock1 = im.Scale("images/clock1.png", 1500, 1080)
+image clock2 = im.Scale("images/clock2.png", 1500, 1080)
+image power1 = im.Scale("images/power1.png", 1500, 1080)
+image power2 = im.Scale("images/power2.png", 1500, 1080)
+image power3 = im.Scale("images/power3.png", 1500, 1080)
+image power4 = im.Scale("images/power4.png", 1500, 1080)
+image power5 = im.Scale("images/power5.png", 1500, 1080)
+image power6 = im.Scale("images/power6.png", 1500, 1080)
+image mem1 = im.Scale("images/mem1.png", 1500, 1080)
+image mem2 = im.Scale("images/mem2.png", 1500, 1080)
+image mem3 = im.Scale("images/mem3.png", 1500, 1080)
+image mem4 = im.Scale("images/mem4.png", 1500, 1080)
+
 
 
 # character들
@@ -155,9 +164,9 @@ label double_headed_arrow:
     show scene50
     conan "이렇게 하면 방향을 알 수 있을거야"
         
-    "동쪽찾기~~~"
-    
+    show clock1 with fade
     conan "시침을 태양 쪽으로 두고"
+    show clock2
     conan "시침과 12시 사이의 각도에서 2분의 1 방향이 남쪽이야"
     conan "그러니까 동쪽은 왼쪽으로 90도 꺾은 방향이지"
     genta "그럼..."
@@ -335,17 +344,29 @@ label find_polaris:
     mistery_man1 "한창 분위기 좋을 때 미안하지만"
     mistery_man1 "그건 나한테 넘겨줘야겠어"
     genta "아까 그 아저씨야"
-
+    
     show scene87 with fade
     conan"(틀림없어 이자들은 보석 강도야)"
 
+    scene black
     show scene86 with fade
     mistery_man1"자, 어서 그걸 내놔"
     mistery_man1 "멍청한 녀석 귀찮은 짓 하지 마라"
 
-    "물리치기~"
-
+    show power1 with fade
+    pause 1.0
+    show power2
+    pause 1.0
+    play sound "audio/퍽.mp3"
+    show power3 with fade
+    pause 1.0
+    show power4
+    pause 1.0
+    show power5
+    pause 1.0
     conan"밑에 계신 아저씨가 이걸 가져가라고 하셨어요"
+    play sound "audio/퍽.mp3"
+    show power6 with fade
     
     show scene88 with fade
     conan"우리가 찾던 진짜 보물은 이거야"
@@ -359,9 +380,13 @@ label find_polaris:
     show scene90 with fade
     play music "audio/cn55.mp3" fadein 2.0
     "보물이란 이곳까지 오며 겪은 모든 경험이다"
+    show mem1
     "강이나 폭포에 빠졌을 수도 있고"
+    show mem2
     "불을 피우거나 물고기를 잡으며"
+    show mem3
     "때로는 친구와 힘을 합쳐 헤쳐 온 그 모든 경험"
+    show mem4
     "지금은 아직 이해할 수 없을지도 모른다"
     "하지만 언젠가 모든 경험이 반드시 보물"
     "재산이 될 것이다"

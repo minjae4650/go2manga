@@ -52,6 +52,7 @@ image scene22 = im.Scale("images/scene22.png", 1500, 1080)
 image scene23 = im.Scale("images/scene23.png", 1500, 1080)
 image scene24 = im.Scale("images/scene24.png", 1500, 1080)
 image scene25 = im.Scale("images/scene25.png", 1500, 1080)
+image fivth_tree = im.Scale("images/5th_tree.png", 1500, 1080)
 
 # label spotted_strap
 image scene26 = im.Scale("images/scene26.png", 1500, 1080)
@@ -297,6 +298,7 @@ label hand_of_devil:
     mistery_man1 "이봐, 중요한 보물이 걸려 있다고"
     mistery_man1 "대답은 똑바로 해"
 
+    $ talk_to_men = None
     menu:
         "수상한 남자들이 싸우고 있는 것 같다. 어떻게 할까?"
         "말을 걸어본다":
@@ -316,6 +318,7 @@ label hand_of_devil:
             mistery_man1 "잔말 말고 따라와"
             mistery_man1 "빨리"
             mistery_man2 "아파요"
+            $ talk_to_men = "talk"
         "좀 더 지켜본다":
             mistery_man2 "아이고, 알겠다고"
             # show that_map with fade
@@ -326,10 +329,13 @@ label hand_of_devil:
             mistery_man1 "잔말 말고 따라와"
             mistery_man1 "빨리"
             mistery_man2 "아파요"
+            $ talk_to_men = "not_talk"
 
     show scene19 with fade
     conan "(저 사람들은 등산하러 왔다기엔 뭔가 이상해)"
-    "이상한 부분 찾기 게임~~(정장, 가죽구두, 지도)"
+    conan "(삽을 가지고 있으면서 정장에 가죽 구두를 신다니)"
+    if talk_to_men == "talk":
+        conan "게다가 그 지도는 뭐지?"
 
     show scene20 with fade
     ayumi "얘들아, 지금 우리가 악마의 손에 있는 거 맞지?"
@@ -337,7 +343,8 @@ label hand_of_devil:
     genta "코난, 삼나무가 4그루뿐인데 여기 맞아?"
     conan "그래, 여기야"
 
-    "5번째 삼나무를 찾아라"
+
+    show fivth_tree with fade
     conan "봐, 이게 5번째 삼나무야"
 
     show scene21 with fade
@@ -398,6 +405,7 @@ label after_tree_ring:
     mitsuhiko "그래서 어느 길로 가면 돼?"
     conan "지도 좀 줘봐"
 
+    scene black
     show devil with fade
     "악마의 손 그 좁은 문으로 들어가라"
 
@@ -426,6 +434,8 @@ label spotted_strap:
     ayumi "맞아, 틀림없이 우리와 같은 보물을 찾고 있을 거야"
     mitsuhiko "그래, 아까 보물이라고 했으니까"
     genta "맞아 확실해"
+
+    window hide
 
     play sound "audio/snake.mp3"
     show scene27 with fade

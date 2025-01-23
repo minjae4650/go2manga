@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/conan_epi2_1.rpy", line 480: expected statement.
-    ayumi
+File "game/conan_epi2_2.rpy", line 368: expected 'image_name_component' not found.
+    show 
          ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Thu Jan 23 17:12:37 2025
+Thu Jan 23 18:40:24 2025
