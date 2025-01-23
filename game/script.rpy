@@ -9,7 +9,11 @@ define m = Character('나', color="#c8ffc8")
 define f = Character('친구', color="#ffc8c8")
 
 
-# 여기에서부터 게임이 시작합니다.
+define config.mouse = {
+    "default": [("gui/cursors/magnify.png", 24, 24)],  # 기본 돋보기 커서
+    "highlight": [("gui/cursors/magnify_red.png", 24, 24)]  # 빨간 돋보기 커서
+}
+
 label start:
     # 어두운 화면에서 시작
     scene black with fade
@@ -64,7 +68,7 @@ label start:
             f "주술회전이야!!!!!!!"
             f "흠흠 어쨋든 오늘은 꼭 이걸 봐야해. 따라와."
             "궁시렁대면서도 결국 상영관으로 들어갔다."
-            jump conan_epi2
+            jump conan
         "다른 영화":
             m "이거구나!"
             f "하핫 아니지롱~ 사실 이거지롱~"
@@ -82,6 +86,17 @@ label conan:
     # 영화 시작 화면
     scene black with fade
 
-    "코난장면이랑 이어지는 부분이 될것임"
+    # 선택지 등장
+    menu:
+        "월광의 소나타":
+            jump conan_start  # conan_start로 이동
+        "월광의 소나타 2편":
+            jump conan_start2
+        "월광의 소나타 3편":
+            jump conan_start3
+        "탐정단 서바이벌":
+            jump conan_epi2
+        "게임 종료":
+            return  # 게임 종료
 
     return

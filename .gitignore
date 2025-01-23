@@ -1,8 +1,4 @@
 renpy/
 *.rpyc
 *.log
-<<<<<<< HEAD
 *.save
-=======
-*.save
->>>>>>> 4ea9a9049b2252b350cb768e40949be1d875d737

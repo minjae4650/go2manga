@@ -23,66 +23,56 @@ image op1 = im.Scale("images/op1.png", 1500, 1080)
 image op2 = im.Scale("images/op2.png", 1500, 1080)
 
 # label conan_epi2_1
-image scene1 = im.Scale("images/scene1.png", 1500, 1080)
-image scene2 = im.Scale("images/scene2.png", 1500, 1080)
-image scene3 = im.Scale("images/scene3.png", 1500, 1080)
-image scene4 = im.Scale("images/scene4.png", 1500, 1080)
-image scene5 = im.Scale("images/scene5.png", 1500, 1080)
-image scene6 = im.Scale("images/scene6.png", 1500, 1080)
-image scene7 = im.Scale("images/scene7.png", 1500, 1080)
-image scene8 = im.Scale("images/scene8.png", 1500, 1080)
+image scene0001 = im.Scale("images/scene1.png", 1500, 1080)
+image scene0002 = im.Scale("images/scene2.png", 1500, 1080)
+image scene0003 = im.Scale("images/scene3.png", 1500, 1080)
+image scene0004 = im.Scale("images/scene4.png", 1500, 1080)
+image scene0005 = im.Scale("images/scene5.png", 1500, 1080)
+image scene0006 = im.Scale("images/scene6.png", 1500, 1080)
+image scene0007 = im.Scale("images/scene7.png", 1500, 1080)
+image scene0008 = im.Scale("images/scene8.png", 1500, 1080)
 
 # label london_bridge
-image scene9 = im.Scale("images/scene9.png", 1500, 1080)
-image scene10 = im.Scale("images/scene10.png", 1500, 1080)
-image scene11 = im.Scale("images/scene11.png", 1500, 1080)
+image scene0009 = im.Scale("images/scene9.png", 1500, 1080)
+image scene0010 = im.Scale("images/scene10.png", 1500, 1080)
+image scene0011 = im.Scale("images/scene11.png", 1500, 1080)
 
 # label hand_of_devil
-image scene12 = im.Scale("images/scene12.png", 1500, 1080)
-image scene13 = im.Scale("images/scene13.png", 1500, 1080)
-image scene14 = im.Scale("images/scene14.png", 1500, 1080)
-image scene15 = im.Scale("images/scene15.png", 1500, 1080)
-image scene16 = im.Scale("images/scene16.png", 1500, 1080)
-image scene17 = im.Scale("images/scene17.png", 1500, 1080)
-image scene18 = im.Scale("images/scene18.png", 1500, 1080)
-image scene19 = im.Scale("images/scene19.png", 1500, 1080)
-image scene20 = im.Scale("images/scene20.png", 1500, 1080)
-image scene21 = im.Scale("images/scene21.png", 1500, 1080)
-image scene22 = im.Scale("images/scene22.png", 1500, 1080)
-image scene23 = im.Scale("images/scene23.png", 1500, 1080)
-image scene24 = im.Scale("images/scene24.png", 1500, 1080)
-image scene25 = im.Scale("images/scene25.png", 1500, 1080)
+image scene0012 = im.Scale("images/scene12.png", 1500, 1080)
+image scene0013 = im.Scale("images/scene13.png", 1500, 1080)
+image scene0014 = im.Scale("images/scene14.png", 1500, 1080)
+image scene0015 = im.Scale("images/scene15.png", 1500, 1080)
+image scene0016 = im.Scale("images/scene16.png", 1500, 1080)
+image scene0017 = im.Scale("images/scene17.png", 1500, 1080)
+image scene0018 = im.Scale("images/scene18.png", 1500, 1080)
+image scene0019 = im.Scale("images/scene19.png", 1500, 1080)
+image scene0020 = im.Scale("images/scene20.png", 1500, 1080)
+image scene0021 = im.Scale("images/scene21.png", 1500, 1080)
+image scene0022 = im.Scale("images/scene22.png", 1500, 1080)
+image scene0023 = im.Scale("images/scene23.png", 1500, 1080)
+image scene0024 = im.Scale("images/scene24.png", 1500, 1080)
+image scene0025 = im.Scale("images/scene25.png", 1500, 1080)
 image fivth_tree = im.Scale("images/5th_tree.png", 1500, 1080)
 
 # label spotted_strap
-image scene26 = im.Scale("images/scene26.png", 1500, 1080)
-image scene27 = im.Scale("images/scene27.png", 1500, 1080)
-image scene28 = im.Scale("images/scene28.png", 1500, 1080)
-image scene29 = im.Scale("images/scene29.png", 1500, 1080)
-image scene30 = im.Scale("images/scene30.png", 1500, 1080)
-image scene31 = im.Scale("images/scene31.png", 1500, 1080)
-image scene32 = im.Scale("images/scene32.png", 1500, 1080)
+image scene0026 = im.Scale("images/scene26.png", 1500, 1080)
+image scene0027 = im.Scale("images/scene27.png", 1500, 1080)
+image scene0028 = im.Scale("images/scene28.png", 1500, 1080)
+image scene0029 = im.Scale("images/scene29.png", 1500, 1080)
+image scene0030 = im.Scale("images/scene30.png", 1500, 1080)
+image scene0031 = im.Scale("images/scene31.png", 1500, 1080)
+image scene0032 = im.Scale("images/scene32.png", 1500, 1080)
 
 # label vallet_of_weissmuller
-image scene33 = im.Scale("images/scene33.png", 1500, 1080)
-image scene34 = im.Scale("images/scene34.png", 1500, 1080)
-image scene35 = im.Scale("images/scene35.png", 1500, 1080)
-image scene36 = im.Scale("images/scene36.png", 1500, 1080)
-image scene37 = im.Scale("images/scene37.png", 1500, 1080)
+image scene0033 = im.Scale("images/scene33.png", 1500, 1080)
+image scene0034 = im.Scale("images/scene34.png", 1500, 1080)
+image scene0035 = im.Scale("images/scene35.png", 1500, 1080)
+image scene0036 = im.Scale("images/scene36.png", 1500, 1080)
+image scene0037 = im.Scale("images/scene37.png", 1500, 1080)
 image fire1 = im.Scale("images/불1.png", 1500, 1080)
 image fire2 = im.Scale("images/불2.png", 1500, 1080)
 image fire3 = im.Scale("images/불3.png", 1500, 1080)
 image fire4 = im.Scale("images/불4.png", 1500, 1080)
-
-
-# character들
-define conan = Character('에도가와 코난', color="#26619C")
-define agasa = Character('아가사 박사님', color="#6D5E7D")
-define mitsuhiko = Character('츠부라야 미츠히코', color="#5CB174")
-define ayumi = Character('요시다 아유미', color="#ED6B7C")
-define genta = Character('코지마 겐타', color="#B8860B")
-define mistery_man1 = Character('수상한 남자 1', color="#FFFFFF")
-define mistery_man2 = Character('수상한 남자 2', color="#FFFFFF")
 
 
 init python:
@@ -121,16 +111,30 @@ screen map_screen:
 
 
 label conan_epi2:
+    scene black
+
+    m "영화관 문이 굉장히 독특하네.."
+
+    scene door with fade
+
+    "문에는 정교한 무늬와 황금빛 손잡이가 있었고, 묘한 분위기가 감돌았다."
+    "호기심에 문을 열어보았다."
+
+    play sound "door_open.ogg"
+    scene bright_light with dissolve
+
+    "문을 여는 순간 강렬한 빛이 나를 휘감았다."
+
     play music "audio/cn22.mp3"
     scene black
 
-    show scene1 with fade
+    show scene0001 with fade
     agasa "어디 있는거야"
 
-    show scene2
+    show scene0002
     agasa "오, 여기 있었군"
 
-    show scene3 with fade
+    show scene0003 with fade
     play sound "audio/박사님 웃음소리.mp3"
     agasa "으하하하하하하하"
 
@@ -142,13 +146,13 @@ label conan_epi2:
 
     play music "audio/cn06.mp3" fadein 1.0
 
-    show scene4 with fade
+    show scene0004 with fade
     ayumi "박사님, 이거 진짜 지도예요?"
     agasa "그래, 진짜란다"
     mitsuhiko "그럼 정말 보물이 있는 거군요"
     agasa "그건 직접 가서 확인해 보렴"
 
-    show scene5
+    show scene0005
     genta "반드시 보물을 찾고 말겠어"
     mitsuhiko "나도!"
     ayumi "아유미도!"
@@ -162,9 +166,9 @@ label conan_epi2:
     $ question = None
     menu:
         "박사님께 질문해보기":
-            show scene6 with fade
+            show scene0006 with fade
             conan "그런데 박사님, 저런 수상한 지도를 어디서 구하셨어요?"
-            show scene7 with fade
+            show scene0007 with fade
             agasa "궁금하냐?"
             agasa "끝까지 가 보면 알 수 있을 거다"
             jump after_question
@@ -174,7 +178,7 @@ label conan_epi2:
 label after_question:
     scene black
 
-    show scene8 with fade
+    show scene0008 with fade
     agasa "그럼 난 여기서 낚시를 하고 있을테니"
     agasa "너희는 실컷 즐기고 오렴"
 
@@ -234,11 +238,11 @@ label answer_input:
 label london_bridge:
     scene black
 
-    show scene9 with fade
+    show scene0009 with fade
     ayumi "코난, 너는 어떤 보물일 것 같아?"
     conan "아직 보물인지 확실하지 않으니까.."
 
-    show scene10 with fade
+    show scene0010 with fade
     genta "보물이 확실해"
     genta "틀림 없이 보물일거야. 그렇지, 미츠히코?"
     mitsuhiko "맞아, 다이아몬드 같은 보석이거나"
@@ -264,16 +268,16 @@ label london_bridge:
 label hand_of_devil:
     scene black
 
-    show scene12 with fade
+    show scene0012 with fade
     mitsuhiko "이름이 런던 다리라서 떨어질까 봐 조마조마했어"
     conan "영화에서 이런 다리는 꼭 끊어지니까"
     "하하하하하하하하하!"
 
     play sound "audio/다리 끊어지는.mp3"
-    show scene13 with fade
+    show scene0013 with fade
     pause 2.0
 
-    show scene14 with fade
+    show scene0014 with fade
     ayumi "말도 안 돼"
     genta "웃어넘길 일이 아니잖아"
     conan "(박사님도 참 우리를 이렇게 위험한 곳에 오게 하시다니)"
@@ -282,19 +286,19 @@ label hand_of_devil:
     show devil with fade
     pause 2.0
 
-    show scene16 with fade
+    show scene0016 with fade
     mistery_man2 "역시 이 근방은 나침반이 말을 안 듣네요"
     mistery_man1 "그 녀석은 왜 이런 산속에 보물을 숨긴 거야?"
     mistery_man2 "그 녀석은 미스터리물을 좋아했으니까요"
     mistery_man1 "아무리 그래도 너무 지나쳐"
 
-    show scene17 with fade
+    show scene0017 with fade
     mistery_man1 "나 참, 지도에선 5그루던데 여긴 4그루뿐이야"
     mistery_man1 "진짜 여기 맞아?"
     mistery_man2 "그 녀석도 참 운이 없어요"
     mistery_man2 "곧 보물이 손에 들어올 테데 사고로 죽다니 말이죠"
 
-    show scene18 with fade
+    show scene0018 with fade
     mistery_man1 "이봐, 중요한 보물이 걸려 있다고"
     mistery_man1 "대답은 똑바로 해"
 
@@ -331,13 +335,13 @@ label hand_of_devil:
             mistery_man2 "아파요"
             $ talk_to_men = "not_talk"
 
-    show scene19 with fade
+    show scene0019 with fade
     conan "(저 사람들은 등산하러 왔다기엔 뭔가 이상해)"
     conan "(삽을 가지고 있으면서 정장에 가죽 구두를 신다니)"
     if talk_to_men == "talk":
         conan "게다가 그 지도는 뭐지?"
 
-    show scene20 with fade
+    show scene0020 with fade
     ayumi "얘들아, 지금 우리가 악마의 손에 있는 거 맞지?"
     mitsuhiko "아마 그런 것 같은데"
     genta "코난, 삼나무가 4그루뿐인데 여기 맞아?"
@@ -347,7 +351,7 @@ label hand_of_devil:
     show fivth_tree with fade
     conan "봐, 이게 5번째 삼나무야"
 
-    show scene21 with fade
+    show scene0021 with fade
     mitsuhiko "근데 나침반이 말을 안듣네"
     conan "여길 보면 돼"
 
@@ -396,11 +400,11 @@ screen tree_ring_puzzle():
 
 
 label after_tree_ring:
-    show scene22 with fade
+    show scene0022 with fade
     conan "이쪽 나이테가 간격이 더 넓지?"
     conan "햇빛을 더 많이 받아서 성장이 빠르기 때문이래"
 
-    show scene23 with fade
+    show scene0023 with fade
     ayumi "그럼 저쪽이 남쪽이구나"
     mitsuhiko "그래서 어느 길로 가면 돼?"
     conan "지도 좀 줘봐"
@@ -409,13 +413,13 @@ label after_tree_ring:
     show devil with fade
     "악마의 손 그 좁은 문으로 들어가라"
 
-    show scene24 with fade
+    show scene0024 with fade
     conan "악마의 손은 왼손이니까 왼쪽의 두 길이겠지"
     conan "좁은 문으로 들어가라고 했으니까"
     conan "폭이 좁은 맨 왼쪽 길로 가면 돼"
     stop music fadeout 2.0
 
-    show scene25 with fade
+    show scene0025 with fade
     mistery_man1 "어째서 저 녀석들이 저 지도를 가지고 있지?"
     mistery_man2 "그나저나 똑똑한 꼬맹이네요"
     mistery_man1 "아무튼 선수를 빼앗기지 않게 서두르지"
@@ -429,7 +433,7 @@ label spotted_strap:
 
     show spotted with fade
     pause 2.0
-    show scene26 with fade
+    show scene0026 with fade
     genta "아까 그 사람들 뭔가 수상했어"
     ayumi "맞아, 틀림없이 우리와 같은 보물을 찾고 있을 거야"
     mitsuhiko "그래, 아까 보물이라고 했으니까"
@@ -438,25 +442,25 @@ label spotted_strap:
     window hide
 
     play sound "audio/snake.mp3"
-    show scene27 with fade
+    show scene0027 with fade
     pause 2.0
 
-    show scene28 with fade
+    show scene0028 with fade
     pause 1.0
     play sound "audio/splash.mp3"
-    show scene29 with fade
+    show scene0029 with fade
     # play sound "audio/splash.mp3"
     pause 2.0
 
-    show scene30 with fade
+    show scene0030 with fade
     mitsuhiko "누가 좀 살려 주세요"
     genta "정신 차려, 미츠히코"
 
-    show scene31 with fade
+    show scene0031 with fade
     genta "똑바로 서 봐"
     mitsuhiko "어라"
 
-    show scene32
+    show scene0032
     mitsuhiko "죽는 줄 알았네"
     "하하하하하하하하"
 
@@ -465,7 +469,7 @@ label foot_of_walton:
 
     show walton with fade
     pause 2.0
-    show scene33 with fade
+    show scene0033 with fade
     play sound "audio/not_matches.mp3"
     mitsuhiko "아무리 좋은 캠핑용 성냥도 젖으면 소용없네"
     genta "젠장, 모닥불을 피워서 젖은 옷을 말리려고 했는데"
@@ -490,20 +494,20 @@ label after_fire:
     ayumi "대단해, 코난"
 
     window hide
-    show scene34 with fade
+    show scene0034 with fade
     pause 2.0
 
     stop music fadeout 2.0
 
-    show scene35 with fade
+    show scene0035 with fade
     mitsuhiko "그런데 정말 끝까지 찾아갈 수 있을까?"
     genta "아까 그 언덕은 어디지? 거길 또 오르긴 싫은데"
     conan "괜찮아"
 
-    show scene36 with fade
+    show scene0036 with fade
     conan "지금 이 근처니까 이쪽으로 이렇게 돌아가면"
     conan "다음 목적지에 도착할 수 있을 거야"
-    show scene37 with fade
+    show scene0037 with fade
     genta "좋았어, 그럼 출발하자!"
 
     show thief with fade
