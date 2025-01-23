@@ -2,9 +2,18 @@
 errors listed below, and try again.
 
 
+<<<<<<< HEAD
 File "game/script.rpy", line 101: choice menuitem expects a non-empty block.
     "코난 게임":
             ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
 Thu Jan 23 19:09:06 2025
+=======
+File "game/screens.rpy", line 352: Line is indented, but the preceding tag statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    add "gui/my_custom.jpg"
+    ^
+
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Thu Jan 23 20:13:51 2025
+>>>>>>> 9f47ac00753743f343416553cdff50748658c4ec
