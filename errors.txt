@@ -2,47 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/conan3.rpy", line 648: end of line expected.
-(Perhaps you left out a " at the end of the first line.)
-    character_police "촌장은 반대했지만 말이다.
-    
-            "촌장의 비서에 관해서":
-               ^
-                show scenes3_93
-                character_conan "촌장 비서인 히라타란 사람은요?"
-                show scenes3_94
-                character_police "그 남자가 수상한 놈이지~~"
-                show scenes3_95
-                character_police "뭘 하는 건진 모르겠지만,"
-                character_police "종종 구민 회관에서 가와시마 씨와"
-                character_police "몰래몰래 만나곤 하더구먼."
-    
-            "시미즈 마사토에 관해서":
-                show scenes3_96
-                character_conan "시미즈란 사람은 어때요?"
-                show scenes3_97
-                character_police "정의감 강하고 어민들의 인망도 뜨겁지."
-    
-            "그만 물어보자":
-                jump mystery4
-    
-        scene black
-        show scenes3_89
-        "순경 할아버지에게 정보를 더 캐내보자!"
-        menu:
-            "아소 케이지와의 관계에 대해서":
-                character_conan "그 4명의 관계는요?"
-                show scenes3_90
-                character_police "아소 씨를 포함해서 모두가"
-                character_police "동창생이지."
-    
-            "무라사와 씨의 관계에 대해서":
-                character_conan "헤에~ 그럼 그 무라사와라는 형은요?"
-                show scenes3_91
-                character_police "아~~ 그 녀석은 3년 정도 전에 불쑥 이 섬에 찾아와서는"
-                show scenes3_92
-                character_police "일전에 촌장의 딸인 레이코 양과 약혼했지."
-                character_police "촌장은 반대했지만 말이다.
+File "game/screens.rpy", line 352: Line is indented, but the preceding tag statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    add "gui/my_custom.jpg"
+    ^
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Thu Jan 23 19:59:20 2025
+Thu Jan 23 20:13:51 2025

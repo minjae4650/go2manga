@@ -1,32 +1,82 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 193, in script
-    python:
-  File "renpy/common/00start.rpy", line 194, in <module>
-    renpy.execute_default_statement(True)
-  File "game/screens.rpy", line 263, in execute_default
-    default quick_menu = True
-Exception: store.quick_menu is being given a default a second time.
+  File "game/screens.rpy", line 347, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 347, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 362, in execute
+    if gui.show_name:
+  File "game/screens.rpy", line 364, in execute
+    vbox:
+  File "game/screens.rpy", line 367, in execute
+    text "[비오타쿠인 내가 만화 속 주인공이 되어버린 건에 대하여]":
+SyntaxError: invalid syntax (<none>, line 1)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 193, in script
-    python:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
   File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 827, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1178, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/00start.rpy", line 194, in <module>
-    renpy.execute_default_statement(True)
-  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\exports\statementexports.py", line 372, in execute_default_statement
-    i.execute_default(start)
-  File "game/screens.rpy", line 263, in execute_default
-    default quick_menu = True
-Exception: store.quick_menu is being given a default a second time.
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2745, in interact_core
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\display\displayable.py", line 434, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\display\screen.py", line 480, in visit_all
+    callback(self)
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\display\core.py", line 2745, in <lambda>
+    root_widget.visit_all(lambda d : d.per_interact())
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\display\screen.py", line 491, in per_interact
+    self.update()
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\display\screen.py", line 697, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 347, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 347, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 362, in execute
+    if gui.show_name:
+  File "game/screens.rpy", line 364, in execute
+    vbox:
+  File "game/screens.rpy", line 367, in execute
+    text "[비오타쿠인 내가 만화 속 주인공이 되어버린 건에 대하여]":
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\text\text.py", line 2059, in __init__
+    self.set_text(text, scope, substitute) # type: ignore
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\text\text.py", line 2192, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\substitutions.py", line 86, in interpolate
+    raise e
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1207, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1144, in py_compile
+    raise e
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1081, in py_compile
+    raise orig_e
+  File "C:\Users\NFSA\Downloads\renpy-8.3.4-sdk\renpy\python.py", line 1073, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (<none>, line 1)
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.3.4.24120703
 go2manga 1.0
-Thu Jan 23 17:35:16 2025
+Thu Jan 23 20:19:02 2025
