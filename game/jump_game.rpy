@@ -10,6 +10,7 @@ image obstacle = im.Scale("images/obstacle.png", 200, 500)  # '구멍' 이미지
 image cliff = im.Scale("images/cliff.png", 1500, 1080)
 image cliff_success = im.Scale("images/cliff_success.png", 1500, 1080)
 image cliff_fail = im.Scale("images/cliff_fail.png", 1500, 1080)
+image back_black = im.Scale("images/obstacle.png", 1500, 1080)
 
 # ======================================================
 # 파이썬 클래스 선언
@@ -269,7 +270,7 @@ label start_mini_game:
 
 label dinosaur_game:
     scene black
-    show cliff
+    show back_black
     call screen dino_runner_game
 
 screen dino_runner_game():
