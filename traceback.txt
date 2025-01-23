@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 98, in script
+    jump conan_epi2_1
+ScriptError: could not find label 'conan_epi2_1'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 98, in script
+    jump conan_epi2_1
+  File "C:\Users\user\Downloads\renpy-8.3.4-sdk\renpy\ast.py", line 1705, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\user\Downloads\renpy-8.3.4-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'conan_epi2_1'.
+
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.3.4.24120703
+go2manga 1.0
+Thu Jan 23 19:13:23 2025
