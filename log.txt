@@ -1,36 +1,97 @@
-2025-01-23 08:37:43 UTC
+2025-01-23 10:58:43 UTC
 Windows-10-10.0.22631
 Ren'Py 8.3.4.24120703
 
-Early init took 0.07s
+Early init took 0.13s
 Loading error handling took 0.04s
-Loading script took 0.33s
-Loading save slot metadata took 0.04s
+Loading script took 0.26s
+Loading save slot metadata took 0.05s
 Loading persistent took 0.00s
-Running init code took 0.07s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.00s
-Reloading save slot metadata took 0.02s
-Index archives took 0.00s
-Dump and make backups took 0.04s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc took 0.03s
+
+File "game/conan3.rpy", line 614: end of line expected.
+(Perhaps you left out a " at the end of the first line.)
+    character_police "촌장은 반대했지만 말이다.
+    
+            "촌장의 비서에 관해서":
+               ^
+                show scenes3_93
+                character_conan "촌장 비서인 히라타란 사람은요?"
+                show scenes3_94
+                character_police "그 남자가 수상한 놈이지~~"
+                show scenes3_95
+                character_police "뭘 하는 건진 모르겠지만,"
+                character_police "종종 구민 회관에서 가와시마 씨와"
+                character_police "몰래몰래 만나곤 하더구먼."
+    
+            "시미즈 마사토에 관해서":
+                show scenes3_96
+                character_conan "시미즈란 사람은 어때요?"
+                show scenes3_97
+                character_police "정의감 강하고 어민들의 인망도 뜨겁지."
+    
+        scene black
+        show scenes3_89
+        "순경 할아버지에게 정보를 더 캐내보자!"
+        menu:
+            "아소 케이지와의 관계에 대해서":
+                character_conan "그 4명의 관계는요?"
+                show scenes3_90
+                character_police "아소 씨를 포함해서 모두가"
+                character_police "동창생이지."
+    
+            "무라사와 씨의 관계에 대해서":
+                character_conan "헤에~ 그럼 그 무라사와라는 형은요?"
+                show scenes3_91
+                character_police "아~~ 그 녀석은 3년 정도 전에 불쑥 이 섬에 찾아와서는"
+                show scenes3_92
+                character_police "일전에 촌장의 딸인 레이코 양과 약혼했지."
+                character_police "촌장은 반대했지만 말이다.
+
+File "game/conan3.rpy", line 685: end of line expected.
+(Perhaps you left out a " at the end of the first line.)
+    character_police "촌장은 반대했지만 말이다.
+    
+            "촌장의 비서에 관해서":
+               ^
+                show scenes3_93
+                character_conan "촌장 비서인 히라타란 사람은요?"
+                show scenes3_94
+                character_police "그 남자가 수상한 놈이지~~"
+                show scenes3_95
+                character_police "뭘 하는 건진 모르겠지만,"
+                character_police "종종 구민 회관에서 가와시마 씨와"
+                character_police "몰래몰래 만나곤 하더구먼."
+    
+            "시미즈 마사토에 관해서":
+                show scenes3_96
+                character_conan "시미즈란 사람은 어때요?"
+                show scenes3_97
+                character_police "정의감 강하고 어민들의 인망도 뜨겁지."
+    
+            "그만 물어보자":
+                jump mystery4
+    
+        scene black
+        show scenes3_89
+        "순경 할아버지에게 정보를 더 캐내보자!"
+        menu:
+            "아소 케이지와의 관계에 대해서":
+                character_conan "그 4명의 관계는요?"
+                show scenes3_90
+                character_police "아소 씨를 포함해서 모두가"
+                character_police "동창생이지."
+    
+            "무라사와 씨의 관계에 대해서":
+                character_conan "헤에~ 그럼 그 무라사와라는 형은요?"
+                show scenes3_91
+                character_police "아~~ 그 녀석은 3년 정도 전에 불쑥 이 섬에 찾아와서는"
+                show scenes3_92
+                character_police "일전에 촌장의 딸인 레이코 양과 약혼했지."
+                character_police "촌장은 반대했지만 말이다.
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.19s
-Cleaning stores took 0.00s
-Init translation took 0.04s
-Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.66s
+Interface start took 0.73s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)

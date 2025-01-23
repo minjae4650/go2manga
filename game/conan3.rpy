@@ -232,8 +232,11 @@ image scenes3_210 = im.Scale("images/scenes3/scenes3_210.png", 1500, 1080)
 image scenes3_211 = im.Scale("images/scenes3/scenes3_211.png", 1500, 1080)
 image scenes3_212 = im.Scale("images/scenes3/scenes3_212.png", 1500, 1080)
 image scenes3_213 = im.Scale("images/scenes3/scenes3_213.png", 1500, 1080)
+image scenes3_214 = im.Scale("images/scenes3/scenes3_214.png", 1920, 1080)
+image scenes3_215 = im.Scale("images/scenes3/scenes3_214.png", 1500, 1080)
 
 image movie1 = Movie(play="videos/movie1.webm", pos=(0, 0), anchor=(0, 0))
+image movie2 = Movie(play="videos/movie2.webm", pos=(0, 0), anchor=(0, 0))
 
 # 인물들들
 define character_conan = Character('에도가와 코난', color="#c8ffc8")
@@ -420,7 +423,10 @@ label conan_start3:
     character_reiko "아빠와 가와시마가 없어지면"
     character_reiko "촌장 자리는 이 시미즈에게"
     character_reiko "굴러 들어올 줄 알고 꾸민 짓이라구요!"
+    jump mystery2
 
+label mystery2:
+    scene black
     show scenes3_44
     character_ran "어머, 뭘 보고 있니? 코난 군."
     character_conan "살인 현장에 범인이 남기고 간 보면이야."
@@ -444,6 +450,15 @@ label conan_start3:
     show scenes3_48
     character_ran "건반.."
 
+    "(알았다!! 이 암호는!!)"
+    menu:
+        "피아노 건반과 알파벳과 관련이 있어!":
+            pass
+        "피아노 건반과 숫자와 관련이 있어!":
+            "생각해보니 숫자는 말도 안되는 것 같아. 다시 생각해보자.."
+            jump mystery2
+
+
     show scenes3_50
     character_reiko "빨리 이 살인귀를 잡아들여요!"
     character_reiko "그렇지 않으면 또 희생자가.."
@@ -457,112 +472,403 @@ label conan_start3:
     show scenes3_53
     character_conan "다음은 네 차례다."
     character_ran  "코난 군??"
-    "원리를 아니까 간단해! 이 암호."
-    "피아노 건반의 왼쪽 끝부터 순서대로"
-    "알파벳을 적용시키고"
-    "메시지 글자에 해당하는 소리를"
-    "보면에 적어넣은 것뿐이야."
-    "그걸 근거로"
-    "가와시마 씨가 살해 당한 현장에 있던 보면을 읽어보면"
-    "와카테루나 츠기와 오마에노 반다 (알고있겠지, 다음은 네 차례다.)"
-    "그치?"
-    "굉장해~ 코난 군~~"
-    "그럼 아까 그 피로 써 놓은 보면은!"
-    "보자.."
-    "옛날의 원한, 여기서 푸노라."
-    "예, 옛날의 원한이라면.. 설마..!"
-    "12년 전에 불타 죽은 그 피아니스트의..!"
-    "녀석이야.."
-    "아소 케이지는 살아 있다~~~!!"
-    "살아 있지 않아요."
-    "불탄 자리에서 찾아낸 치형도 일치했고, 틀림없소."
-    "단지 전부 다 타 버렸고"
-    "남은 건 커다란 금고에 들어있던"
-    "악보 뿐이었지~"
-    "아, 악보!?!?"
-    "어디요! 어디에 있소, 그 악보는!!"
-    "구민 회관 창고라오."
-    "그러니까 거기 열쇠가 아마 파출소에.."
-    "그렇다면 빨랑빨랑 가져오시오!"
-    "잠깐만요, 순경 아저씨! 저도 갈래요!"
-    "코난 군??"
-    "정말.."
-    "저기요, 아소 씨란 사람은"
-    "정말로 자기가 집에 불을 붙였어요?"
-    "그래.. 4명의 목격자가 있으니 말이다.."
-    "전 촌장인 가메야마 씨와 쿠로이와 촌장."
-    "그리고 니시모토 씨와 가와시마 씨란다."
-    "그 4명의 관계는요?"
-    "아소 씨를 포함해서 모두가"
-    "동창생이지."
-    "헤에~ 그럼 그 무라사와라는 형은요?"
-    "아~~ 그 녀석은 3년 정도 전에 불쑥 이 섬에 찾아와서는"
-    "일전에 촌장의 딸인 레이코 양과 약혼했지."
-    "촌장은 반대했지만 말이다."
-    "촌장 비서인 히라타란 사람은요?"
-    "그 남자가 수상한 놈이지~~"
-    "뭘 하는 건진 모르겠지만,"
-    "종종 구민 회관에서 가와시마 씨와"
-    "몰래몰래 만나곤 하더구먼."
-    "시미즈란 사람은 어때요?"
-    "정의감 강하고 어민들의 인망도 뜨겁지."
-    "흥~.."
-    "이제 더 물어볼 거 없나? 똘똘이 군."
-    "에? 아, 응.."
-    "아이구야? 이상하구먼~~"
-    "분명히 이 근처에 뒀을텐데.."
-    "(나참.. 벌써 1시간도 넘게 찾고 있잖아요..)"
-    "음.. 음?"
-    "오~~! 있다, 있어! 이 열쇠다, 이 열쇠야!"
-    "순경 할아버지!!"
-    "란 누나~!"
-    "이제 늦었단 말야~"
-    "모두 기다리다 지쳐서 돌아가버렸어."
-    "용의자 전원을 돌려보냈단 말야?"
-    "응.."
-    "범인의 마지막 메시지가"
-    "'원한을 여기서 푸노라'로 끝났으니까"
-    "이 이상 살인을 일어나지 않을 거라면서.."
-    "(이럴 수가!)"
-    "(지금까지 살인 현장에서 흐른 건)"
-    "(월광의 제 1악장과 제 2악장이야!)"
-    "(월광에는 아직 제 3악장이 남아있단 말야!)"
-    "나, 구민 회관에 가볼게!"
-    "아아, 자, 잠깐!"
-    "코난 군~?"
-    "호기심은 정말 많다니까~, 코난 군은.."
-    "빨리요~ 창고~~"
-    "보채지 좀 마라.."
-    "지금 피아노 방에서 이상한 소리 나지 않았어?"
-    "에? 못 들었는데?"
-    "어?"
-    "코난 군??"
-    "거기 서!!"
-    "무, 무라사와 씨!"
-    "란!!"
-    "창고야!"
-    "니시모토 씨.."
-    "순경 할아버지!"
-    "으, 응."
-    "메구레 경위님께 연락하세요!"
-    "아아, 알았다!"
-    "제 3악장이 틀어져 있는 건가.."
-    "한 쪽이 30분인 테이프.."
-    "그렇다면 니시모토 씨가 죽은 건"
-    "지금으로부터 30분 이내."
-    "코난 군, 봐!"
-    "니시모토 씨의 다리 밑에 또 보면이..!"
-    "이번엔 도대체 뭐래?"
-    "유서."
-    "유, 유서??"
-    "그, 그럼..!"
-    "자살인가요?"
-    "유서에 의하면"
-    "가와시마 씨와 쿠로이와 씨를 죽인 것에 대해"
-    "이렇게 말하고 있네."
-    "니시모토가 두 사람을..!"
-    "동기는 옛날에 자신들이 저지른 과오가"
-    "밝혀지지 않았으면 해서 그랬다는군."
+
+    show scenes3_54
+    character_conan "원리를 아니까 간단해! 이 암호."
+
+    jump mystery3
+
+label mystery3:
+    scene black
+    play music "conan_ost_21.ogg"
+    show scenes3_55
+    character_conan "피아노 건반의 왼쪽 끝부터 순서대로"
+    character_conan "알파벳을 적용시키고"
+    character_conan "메시지 글자에 해당하는 소리를"
+    character_conan "보면에 적어넣은 것뿐이야."
+
+    show scenes3_56
+    character_conan "그걸 근거로"
+
+    show scenes3_57
+    pause 0.6
+    show scenes3_58
+    character_conan "가와시마 씨가 살해 당한 현장에 있던 보면을 읽어보면"
+
+
+    show scenes3_214
+    "해당 추리를 정확히 해석해보자!!"
+    menu:
+        "너도 곧 따라오게 될거야.":
+            "여기에 그런 말은 없어!! 제대로 해석해보자!"
+            jump mystery3
+        "알고 있겠지, 다음은 네 차례다.":
+            pass
+        "아소 케이지의.. 원한이다..":
+            "여기에 그런 말은 없어!! 제대로 해석해보자!"
+            jump mystery3
+
+    scene black
+    show scenes3_59
+    pause 3
+    window hide
+    show scenes3_60
+    pause 3
+    show scenes3_61
+    pause 3
+
+    window show
+    character_conan "와카테루나 츠기와 오마에노 반다 (알고있겠지, 다음은 네 차례다.)"
+
+    show scenes3_63
+    character_conan "그치?"
+    character_ran "굉장해~ 코난 군~~"
+
+    show scenes3_64
+    character_kogoro "그럼 아까 그 피로 써 놓은 보면은!"
+
+    show scenes3_65
+    character_conan "보자.."
+    character_conan "옛날의 원한, 여기서 푸노라."
+
+    stop music
+
+    show scenes3_66
+    character_kogoro "예, 옛날의 원한이라면.. 설마..!"
+    character_kogoro "12년 전에 불타 죽은 그 피아니스트의..!"
+
+    show scenes3_67
+    character_ken "녀석이야.."
+
+    show scenes3_68
+    character_ken "아소 케이지는 살아 있다~~~!!"
+
+    show scenes3_69
+    character_police "살아 있지 않아요."
+
+    show scenes3_70
+    character_police "불탄 자리에서 찾아낸 치형도 일치했고, 틀림없소."
+    
+    show scenes3_72
+    character_police "단지 전부 다 타 버렸고"
+
+    show scenes3_73
+    character_police "남은 건 커다란 금고에 들어있던"
+    character_police "악보 뿐이었지~"
+
+    show scenes3_74
+    character_kogoro "아, 악보!?!?"
+
+    show scenes3_75
+    character_ken "!?!?"
+
+    show scenes3_76
+    character_kogoro "어디요! 어디에 있소, 그 악보는!!"
+    character_police "구민 회관 창고라오."
+
+    show scenes3_77
+    character_police "그러니까 거기 열쇠가 아마 파출소에.."
+
+    show scenes3_78
+    character_megure "그렇다면 빨랑빨랑 가져오시오!"
+
+    show scenes3_79
+    character_police "네, 넵!!"
+
+    show scenes3_80
+    character_conan "잠깐만요, 순경 아저씨! 저도 갈래요!"
+
+    show scenes3_81
+    character_ran "코난 군??"
+
+    show scenes3_82
+    character_ran "정말.."
+
+    show scenes3_83
+    character_conan "저기요, 아소 씨란 사람은"
+    character_conan "정말로 자기가 집에 불을 붙였어요?"
+
+    show scenes3_84
+    character_police "그래.. 4명의 목격자가 있으니 말이다.."
+
+    show scenes3_85
+    character_police "전 촌장인 가메야마 씨와"
+
+    show scenes3_86
+    character_police "전 촌장인 가메야마 씨와 쿠로이와 촌장."
+
+    show scenes3_87
+    character_police "그리고 니시모토 씨와"
+
+    show scenes3_88
+    character_police "그리고 니시모토 씨와 가와시마 씨란다."
+
+    show scenes3_89
+    "순경 할아버지에게 정보를 더 캐내보자!"
+    menu:
+        "아소 케이지와의 관계에 대해서":
+            character_conan "그 4명의 관계는요?"
+            show scenes3_90
+            character_police "아소 씨를 포함해서 모두가"
+            character_police "동창생이지."
+
+        "무라사와 씨의 관계에 대해서":
+            character_conan "헤에~ 그럼 그 무라사와라는 형은요?"
+            show scenes3_91
+            character_police "아~~ 그 녀석은 3년 정도 전에 불쑥 이 섬에 찾아와서는"
+            show scenes3_92
+            character_police "일전에 촌장의 딸인 레이코 양과 약혼했지."
+            character_police "촌장은 반대했지만 말이다."
+
+        "촌장의 비서에 관해서":
+            show scenes3_93
+            character_conan "촌장 비서인 히라타란 사람은요?"
+            show scenes3_94
+            character_police "그 남자가 수상한 놈이지~~"
+            show scenes3_95
+            character_police "뭘 하는 건진 모르겠지만,"
+            character_police "종종 구민 회관에서 가와시마 씨와"
+            character_police "몰래몰래 만나곤 하더구먼."
+
+        "시미즈 마사토에 관해서":
+            show scenes3_96
+            character_conan "시미즈란 사람은 어때요?"
+            show scenes3_97
+            character_police "정의감 강하고 어민들의 인망도 뜨겁지."
+
+    scene black
+    show scenes3_89
+    "순경 할아버지에게 정보를 더 캐내보자!"
+    menu:
+        "아소 케이지와의 관계에 대해서":
+            character_conan "그 4명의 관계는요?"
+            show scenes3_90
+            character_police "아소 씨를 포함해서 모두가"
+            character_police "동창생이지."
+
+        "무라사와 씨의 관계에 대해서":
+            character_conan "헤에~ 그럼 그 무라사와라는 형은요?"
+            show scenes3_91
+            character_police "아~~ 그 녀석은 3년 정도 전에 불쑥 이 섬에 찾아와서는"
+            show scenes3_92
+            character_police "일전에 촌장의 딸인 레이코 양과 약혼했지."
+            character_police "촌장은 반대했지만 말이다."
+
+        "촌장의 비서에 관해서":
+            show scenes3_93
+            character_conan "촌장 비서인 히라타란 사람은요?"
+            show scenes3_94
+            character_police "그 남자가 수상한 놈이지~~"
+            show scenes3_95
+            character_police "뭘 하는 건진 모르겠지만,"
+            character_police "종종 구민 회관에서 가와시마 씨와"
+            character_police "몰래몰래 만나곤 하더구먼."
+
+        "시미즈 마사토에 관해서":
+            show scenes3_96
+            character_conan "시미즈란 사람은 어때요?"
+            show scenes3_97
+            character_police "정의감 강하고 어민들의 인망도 뜨겁지."
+
+        "그만 물어보자":
+            jump mystery4
+
+    scene black
+    show scenes3_89
+    "순경 할아버지에게 정보를 더 캐내보자!"
+    menu:
+        "아소 케이지와의 관계에 대해서":
+            character_conan "그 4명의 관계는요?"
+            show scenes3_90
+            character_police "아소 씨를 포함해서 모두가"
+            character_police "동창생이지."
+
+        "무라사와 씨의 관계에 대해서":
+            character_conan "헤에~ 그럼 그 무라사와라는 형은요?"
+            show scenes3_91
+            character_police "아~~ 그 녀석은 3년 정도 전에 불쑥 이 섬에 찾아와서는"
+            show scenes3_92
+            character_police "일전에 촌장의 딸인 레이코 양과 약혼했지."
+            character_police "촌장은 반대했지만 말이다."
+
+        "촌장의 비서에 관해서":
+            show scenes3_93
+            character_conan "촌장 비서인 히라타란 사람은요?"
+            show scenes3_94
+            character_police "그 남자가 수상한 놈이지~~"
+            show scenes3_95
+            character_police "뭘 하는 건진 모르겠지만,"
+            character_police "종종 구민 회관에서 가와시마 씨와"
+            character_police "몰래몰래 만나곤 하더구먼."
+
+        "시미즈 마사토에 관해서":
+            show scenes3_96
+            character_conan "시미즈란 사람은 어때요?"
+            show scenes3_97
+            character_police "정의감 강하고 어민들의 인망도 뜨겁지."
+
+        "그만 물어보자":
+            jump mystery4
+
+    scene black
+    show scenes3_89
+    "순경 할아버지에게 정보를 더 캐내보자!"
+    menu:
+        "아소 케이지와의 관계에 대해서":
+            character_conan "그 4명의 관계는요?"
+            show scenes3_90
+            character_police "아소 씨를 포함해서 모두가"
+            character_police "동창생이지."
+
+        "무라사와 씨의 관계에 대해서":
+            character_conan "헤에~ 그럼 그 무라사와라는 형은요?"
+            show scenes3_91
+            character_police "아~~ 그 녀석은 3년 정도 전에 불쑥 이 섬에 찾아와서는"
+            show scenes3_92
+            character_police "일전에 촌장의 딸인 레이코 양과 약혼했지."
+            character_police "촌장은 반대했지만 말이다."
+
+        "촌장의 비서에 관해서":
+            show scenes3_93
+            character_conan "촌장 비서인 히라타란 사람은요?"
+            show scenes3_94
+            character_police "그 남자가 수상한 놈이지~~"
+            show scenes3_95
+            character_police "뭘 하는 건진 모르겠지만,"
+            character_police "종종 구민 회관에서 가와시마 씨와"
+            character_police "몰래몰래 만나곤 하더구먼."
+
+        "시미즈 마사토에 관해서":
+            show scenes3_96
+            character_conan "시미즈란 사람은 어때요?"
+            show scenes3_97
+            character_police "정의감 강하고 어민들의 인망도 뜨겁지."
+
+        "그만 물어보자":
+            jump mystery4
+
+label mystery4:
+    scene black
+    show scenes3_98
+    character_conan "흥~.."
+
+    show scenes3_99
+    character_police "이제 더 물어볼 거 없나? 똘똘이 군."
+
+    show scenes3_100
+    character_conan "에? 아, 응.."
+
+    scene black
+    show scenes3_101 with fade
+    "파출소"
+
+    show scenes3_102
+    character_police  "아이구야? 이상하구먼~~"
+    character_police "분명히 이 근처에 뒀을텐데.."
+
+    show scenes3_103
+    character_conan "(나참.. 벌써 1시간도 넘게 찾고 있잖아요..)"
+    character_police "음.. 음?"
+
+    show scenes3_104
+    character_police "오~~! 있다, 있어! 이 열쇠다, 이 열쇠야!"
+
+    show scenes3_105
+    character_ran "순경 할아버지!!"
+    character_conan "란 누나~!"
+    character_ran "이제 늦었단 말야~"
+    character_ran "모두 기다리다 지쳐서 돌아가버렸어."
+
+    show scenes3_106
+    character_conan "용의자 전원을 돌려보냈단 말야?"
+
+    show scenes3_107
+    character_ran "응.."
+    character_ran "응.. 범인의 마지막 메시지가"
+    character_ran "'원한을 여기서 푸노라'로 끝났으니까"
+    character_ran "이 이상 살인을 일어나지 않을 거라면서.."
+
+    show scenes3_108
+    character_conan "(이럴 수가!)"
+    character_conan "(지금까지 살인 현장에서 흐른 건)"
+    character_conan "(월광의 제 1악장과 제 2악장이야!)"
+
+    show scenes3_109
+    character_conan "(월광에는 아직 제 3악장이 남아있단 말야!)"
+
+    show scenes3_110
+    character_conan "나, 구민 회관에 가볼게!"
+
+    show scenes3_111
+    character_ran "아아, 자, 잠깐!"
+    character_ran "코난 군~?"
+
+    show scenes3_215
+    "구민 회관"
+
+    show scenes3_112
+    character_conan "빨리요~ 창고~~"
+    character_police "보채지 좀 마라.."
+
+    scene black
+    window hide
+    show movie2
+    pause 22.9
+    hide movie2
+    window show
+
+    scene black
+    show scenes3_130
+    character_conan "란!!"
+    character_conan "창고야!"
+
+    show scenes3_131
+    pause 1
+    show scenes3_132
+    pause 1
+    show scenes3_133
+    character_ran "니시모토 씨.."
+
+    show scenes3_134
+    character_conan "순경 할아버지!"
+    character_police "으, 응."
+    character_conan "메구레 경위님께 연락하세요!"
+
+    show scenes3_135
+    character_police "아아, 알았다!"
+
+    show scenes3_136
+    character_conan "제 3악장이 틀어져 있는 건가.."
+
+    show scenes3_137
+    character_conan "한 쪽이 30분인 테이프.."
+    character_conan "그렇다면 니시모토 씨가 죽은 건"
+    character_conan "지금으로부터 30분 이내."
+
+    show scenes3_138
+    character_ran "코난 군, 봐!"
+    character_ran "니시모토 씨의 다리 밑에 또 보면이..!"
+
+    show scenes3_139
+    character_ran "이번엔 도대체 뭐래?"
+
+    show scenes3_140
+    character_conan "유서."
+    show scenes3_141
+    character_conan "유, 유서??"
+    character_conan "그, 그럼..!"
+
+    show scenes3_142
+    "경찰들이 도착한 후.."
+
+    show scenes3_143
+    character_kogoro "자살인가요?"
+    character_megure "유서에 의하면"
+    character_megure "가와시마 씨와 쿠로이와 씨를 죽인 것에 대해"
+    character_megure "이렇게 말하고 있네."
+    character_megure "니시모토가 두 사람을..!"
+    character_megure "동기는 옛날에 자신들이 저지른 과오가"
+    character_megure "밝혀지지 않았으면 해서 그랬다는군."
     "자신들이란"
     "2년 전에 죽은 가게야마 씨."
     "이번에 살해 당한 가와시마 씨와 쿠로이와 씨."
@@ -673,7 +979,7 @@ label conan_start3:
     show movie1
     pause 33.9
     hide movie1
-    window hide
+    window show
     # "아아~~ 이 녀석아, 기다려! 야!!"
     # "어디 가는 거냐!!"
     # "(그렇구나! 그랬던 거야!)"
