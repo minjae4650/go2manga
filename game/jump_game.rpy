@@ -264,6 +264,7 @@ label start_mini_game:
     scene black
     show cliff
     "간단한 점프 게임(구멍 회피)을 시작합니다!"
+    play music "audio/cn08.mp3" volume 0.5
     jump dinosaur_game
 
 label dinosaur_game:
@@ -279,6 +280,7 @@ label game_success:
     scene black
     show cliff_success
     "축하합니다! 시간 안에 무사 통과했습니다!"
+    stop music fadeout 2.0
     jump double_headed_arrow
     # menu:
     #     "다시하기":
@@ -289,6 +291,7 @@ label game_success:
 
 # --- (B) 실패 레이블 ---
 label game_over:
+    stop music fadeout 2.0
     scene black
     show cliff_fail
     "게임 오버... 절벽에 떨어졌습니다."

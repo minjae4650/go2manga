@@ -1,3 +1,15 @@
+# map
+image double = im.Scale("images/maps/쌍두화살.png", 1500, 1080)
+image tree = im.Scale("images/maps/보스포루스나무.png", 1500, 1080)
+image house = im.Scale("images/maps/추장의집.png", 1500, 1080)
+image hill = im.Scale("images/maps/큰곰과작은곰의언덕.png", 1500, 1080)
+
+# options
+image around = im.Scale("images/around.png", 1500, 1080)
+image yusaku = im.Scale("images/yusaku.png", 1500, 1080)
+image target_map = im.Scale("images/target_map.png", 1500, 1080)
+image specific_K = im.Scale("images/specific_K.png", 1500, 1080)
+
 # label double_headed_arrow
 image scene38 = im.Scale("images/scene38.png", 1500, 1080)
 image scene39 = im.Scale("images/scene39.png", 1500, 1080)
@@ -70,13 +82,13 @@ define agasa = Character('아가사 박사님', color="#6D5E7D")
 define mitsuhiko = Character('츠부라야 미츠히코', color="#5CB174")
 define ayumi = Character('요시다 아유미', color="#ED6B7C")
 define genta = Character('코지마 겐타', color="#B8860B")
-define mistery_man3 = Character('수상한 남자 1', color="#FFFFFF")
+define mistery_man1 = Character('수상한 남자 1', color="#FFFFFF")
 define mistery_man2 = Character('수상한 남자 2', color="#FFFFFF")
 
 
 label double_headed_arrow:
     scene black
-    show scene38 with fade
+    show double with fade
     pause 1.0
 
     show scene39 with fade
@@ -115,6 +127,7 @@ label double_headed_arrow:
     mitsuhiko "이거 말이야?"
     conan "아니, 아유미가 말한 방법을 응용할 거야"
     show scene44 with fade
+    play music "audio/cn19.mp3"
     conan "잠깐 줘 봐"
     mitsuhiko "뭘 어쩌려고?"
     conan "너희는 보고만 있어"
@@ -148,6 +161,7 @@ label double_headed_arrow:
     conan "시침과 12시 사이의 각도에서 2분의 1 방향이 남쪽이야"
     conan "그러니까 동쪽은 왼쪽으로 90도 꺾은 방향이지"
     genta "그럼..."
+    stop music fadeout 2.0
     show scene52 with fade
     conan "이쪽이 동쪽이야"
     show scene53 with fade
@@ -155,12 +169,15 @@ label double_headed_arrow:
     conan "그래"
     
     show scene54 with fade
+    pause 2.0
         
     jump bo_tree
 
 
 label bo_tree:
+    play music "audio/cn05.mp3"
     scene black
+
     show scene55 with fade
     pause 1.0
 
@@ -172,19 +189,21 @@ label bo_tree:
 
 label chu_house:
     scene black
+
     show scene57 with fade
     pause 1.0
 
     show scene58 with fade
     pause 2.0
+    stop music fadeout 2.0
 
     jump bears_hill
 
 
 label bears_hill:
     scene black
-    show scene59 with fade
-    pause 1.0
+    show hill with fade
+    pause 2.0
 
     show scene60 with fade
     conan "하늘의 물과 돌이 인도하는 점에서"
@@ -201,15 +220,14 @@ label bears_hill:
     show scene63 with fade
     conan "겐타, 잠깐 어깨 좀 빌릴게"
     genta "뭐야, 갑자기 왜 그래?"
-    conan "돌기둥의 배치가 W 모양이야"
     show scene64 with fade
-    conan "W, west, 그래 서쪽이야!"
-    
-    show scene65 with fade
-    conan "그럼 하늘의 물은 뭐지?"
+    conan "(돌기둥의 배치가 W 모양이야)"
+    show scene65
+    conan "(W, west, 그래 서쪽이야!)"
+    conan "(그럼 하늘의 물은 뭐지?)"
 
     show scene66 with fade
-    mitsuhiko "코난, 뭐 좀 알아냈아?"
+    mitsuhiko "코난, 뭐 좀 알아냈어?"
     conan "응, 돌기둥에서 서쪽으로 다섯 걸음을 가라는 것 같아"
     show scene67 with fade
     ayumi "코난, 아무것도 안보여"
@@ -217,6 +235,7 @@ label bears_hill:
     show scene68 with fade
     conan "서쪽, W가 아니라면 M 아니면 B일 수도 있어"
     conan "그리고 하늘의 물은..."
+    play sound "audio/비명.mp3"
 
     show scene69 with fade
     genta "왜 그래, 미츠히코?"
@@ -235,6 +254,8 @@ label bears_hill:
     show scene73 with fade
     conan "(혹시 이 모양은!)"
 
+    play music "audio/cn03.mp3" fadein 2.0
+
     show scene74 with fade
     conan "(나무와 돌로 북두칠성 모양을 만들었어)"
     conan "(그렇구나)"
@@ -242,7 +263,7 @@ label bears_hill:
     conan "그렇다면.."
 
     show scene75 with fade
-    conan "그렇구나, 저 돌기둥은 카이소페이아자리야"
+    conan "그렇구나, 저 돌기둥은 카시오페이아자리야"
     conan "즉, 하늘의 물과 돌이 인도하는 점은"
     conan "북극성을 말하는 거였어"
 
@@ -251,10 +272,23 @@ label bears_hill:
     conan "약 5배 늘린 곳에 있어"
 
     show scene77 with fade
-    conan "아니면 카이소페이아자리의 W 모양 양 끝에 있는"
+    conan "아니면 카시오페이아자리의 W 모양 양 끝에 있는"
     conan "두 별을 안쪽으로 연결해 만나는 점에서"
     conan "중앙에 있는 별과 연결해 5배 거리를 나아가면 있지"
-    conan "나 참, 박사님도 참 짓궂으시다니까"
+
+    $ choice = None
+    menu:
+        "주위를 더 살펴보자":
+            show around with fade
+            pause 2.0
+            conan "나 참, 박사님도 참 짓궂으시다니까"
+            $ choice = "박사님"
+            jump find_polaris
+        "빨리 북극성을 찾으러 가자":
+            $ choice = "북극성"
+            jump find_polaris
+    
+label find_polaris:
     
     show scene78 with fade
     genta"얘들아, 뭔가 새겨진 돌이 있어"
@@ -266,11 +300,14 @@ label bears_hill:
 
     show scene80 with fade
     conan "알겠지, 다섯 걸음이야"
-    conan "응"
+    genta "응"
     conan "하나, 둘, 셋, 넷" 
+    stop music fadeout 2.0
 
     show scene81 with fade
     conan "다섯"
+    play sound "audio/쿵.mp3"
+    pause 1.0
 
     show scene82 with fade
     conan "다들 물러서"
@@ -290,17 +327,24 @@ label bears_hill:
     genta "이제 전 세계의 장어 덮밥을 배 터지게 먹을 수 있어"
     mitsuhiko"맞아, 그럼 나는 말이지"
 
+    play sound "audio/악당등장.mp3"
+    pause 1.0
+
     show scene86 with fade
-    mistery_man3 "한창 분위기 좋을 때 미안하지만"
-    mistery_man3 "그건 나한테 넘겨줘야겠어"
+    pause 1.0
+    mistery_man1 "한창 분위기 좋을 때 미안하지만"
+    mistery_man1 "그건 나한테 넘겨줘야겠어"
     genta "아까 그 아저씨야"
 
     show scene87 with fade
     conan"(틀림없어 이자들은 보석 강도야)"
 
     show scene86 with fade
-    mistery_man3"자, 어서 그걸 내놔"
-    mistery_man3 "멍청한 녀석 귀찮은 짓 하지 마라"
+    mistery_man1"자, 어서 그걸 내놔"
+    mistery_man1 "멍청한 녀석 귀찮은 짓 하지 마라"
+
+    "물리치기~"
+
     conan"밑에 계신 아저씨가 이걸 가져가라고 하셨어요"
     
     show scene88 with fade
@@ -313,6 +357,7 @@ label bears_hill:
     ayumi"코난, 뭐라고 적혀 있어?"
 
     show scene90 with fade
+    play music "audio/cn55.mp3" fadein 2.0
     "보물이란 이곳까지 오며 겪은 모든 경험이다"
     "강이나 폭포에 빠졌을 수도 있고"
     "불을 피우거나 물고기를 잡으며"
@@ -327,18 +372,32 @@ label bears_hill:
     genta "무슨 소린지 잘 모르겠지만"
     ayumi"그냥 괜찮은 것 같아"
     mitsuhiko "뭔가 좀 그렇지?"
-        
-    "유사쿠 쿠도~~~"
-        
-    "이건 아빠가 쓰신거야"
-    "이 독특한 K 모양을 누가 흉내 낼 수 있겠어?"
-        
-    "처음부터 눈치챘어야 했다"
-    "텐트를 친 강가의 정면에 있는 산 정상이"
-    "우리가 가려던 목적지란 것을 말이다"
-    "그 나무 위에서 박사님이 계신 곳이 바로 내려다 보이다니"
-    "하지만 거리는 가까워도"
 
+    stop music fadeout 2.0
+
+    menu:
+        "이제 빨리 박사님께 돌아가자":
+            jump go_to_the_place
+        "조금 더 살펴볼까?":
+            show yusaku with fade
+            conan "유사쿠 쿠도.."
+            conan "이건 신이치, 즉 코난의 아버지 이름인데"
+            show specific_K with fade
+            conan "그렇구나! 이 독특한 K모양"
+            conan "신이치의 아버지가 쓰신거야"
+
+    play music "audio/cn54.mp3" fadein 2.0
+    if choice == "박사님":
+        show target_map with fade
+        conan "처음부터 눈치챘어야 했다"
+        conan "텐트를 친 강가의 정면에 있는 산 정상이"
+        conan "우리가 가려던 목적지란 것을 말이다"
+        conan "그 나무 위에서 박사님이 계신 곳이 바로 내려다 보이다니"
+        conan "하지만 거리는 가까워도"
+
+    jump go_to_the_place
+
+label go_to_the_place:
     show scene92 with fade
     "상당히 거친 여정이었다"
 
@@ -352,9 +411,10 @@ label bears_hill:
     show scene95 with fade
     "처음에는 보물찾기를 무시했지만"
     "이런 모험은 몇 살이 되든 즐거운 법이라"
-    "17살인 나도 제법 흥미진진했다"
+    "나도 제법 흥미진진했다"
     "결국 그 보석은 보물이 아니었지만"
-    "있었어요, 아빠"
-    "정말 있더라고요"
-    "진짜 보물말이에요"
-    
+    show scene96 with fade
+    "또 한번 진귀한 걸 얻었다"
+    "진짜 보물을.."
+
+    stop music fadeout 2.0

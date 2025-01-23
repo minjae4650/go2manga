@@ -1,8 +1,18 @@
+# maps
+image white = im.Scale("images/maps/백골나무.png", 1500, 1080)
+image london = im.Scale("images/maps/런던다리.png", 1500, 1080)
+image devil = im.Scale("images/maps/악마의손.png", 1500, 1080)
+image spotted = im.Scale("images/maps/얼룩무늬끈.png", 1500, 1080)
+image walton = im.Scale("images/maps/월턴기슭.png", 1500, 1080)
+image thief = im.Scale("images/maps/도둑의평균대.png", 1500, 1080)
+image weissmuller = im.Scale("images/maps/와이즈뮬러의계곡.png", 1500, 1080)
+
+# for game
 image bg quiz_wide = im.Scale("images/quiz_bg.png", 3000, 1324)
 image quiz_wide_2 = im.Scale("images/quiz_bg_2.png", 1500, 1080)
 image thief_balance = im.Scale("images/thief_balance.png", 1500, 1080)
 
-
+# option
 image white_tree = im.Scale("images/white_tree.png", 1500, 1080)
 image bridge_run = im.Scale("images/bridge_run.png", 1500, 1080)
 image bridge_walk = im.Scale("images/bridge_walk.png", 1500, 1080)
@@ -12,7 +22,7 @@ image that_map = im.Scale("images/that_map.png", 1500, 1080)
 image op1 = im.Scale("images/op1.png", 1500, 1080)
 image op2 = im.Scale("images/op2.png", 1500, 1080)
 
-
+# label conan_epi2_1
 image scene1 = im.Scale("images/scene1.png", 1500, 1080)
 image scene2 = im.Scale("images/scene2.png", 1500, 1080)
 image scene3 = im.Scale("images/scene3.png", 1500, 1080)
@@ -22,12 +32,12 @@ image scene6 = im.Scale("images/scene6.png", 1500, 1080)
 image scene7 = im.Scale("images/scene7.png", 1500, 1080)
 image scene8 = im.Scale("images/scene8.png", 1500, 1080)
 
-
+# label london_bridge
 image scene9 = im.Scale("images/scene9.png", 1500, 1080)
 image scene10 = im.Scale("images/scene10.png", 1500, 1080)
 image scene11 = im.Scale("images/scene11.png", 1500, 1080)
 
-
+# label hand_of_devil
 image scene12 = im.Scale("images/scene12.png", 1500, 1080)
 image scene13 = im.Scale("images/scene13.png", 1500, 1080)
 image scene14 = im.Scale("images/scene14.png", 1500, 1080)
@@ -43,7 +53,7 @@ image scene23 = im.Scale("images/scene23.png", 1500, 1080)
 image scene24 = im.Scale("images/scene24.png", 1500, 1080)
 image scene25 = im.Scale("images/scene25.png", 1500, 1080)
 
-
+# label spotted_strap
 image scene26 = im.Scale("images/scene26.png", 1500, 1080)
 image scene27 = im.Scale("images/scene27.png", 1500, 1080)
 image scene28 = im.Scale("images/scene28.png", 1500, 1080)
@@ -52,15 +62,48 @@ image scene30 = im.Scale("images/scene30.png", 1500, 1080)
 image scene31 = im.Scale("images/scene31.png", 1500, 1080)
 image scene32 = im.Scale("images/scene32.png", 1500, 1080)
 
-
+# label vallet_of_weissmuller
 image scene33 = im.Scale("images/scene33.png", 1500, 1080)
 image scene34 = im.Scale("images/scene34.png", 1500, 1080)
 image scene35 = im.Scale("images/scene35.png", 1500, 1080)
 image scene36 = im.Scale("images/scene36.png", 1500, 1080)
 image scene37 = im.Scale("images/scene37.png", 1500, 1080)
+image fire1 = im.Scale("images/불1.png", 1500, 1080)
+image fire2 = im.Scale("images/불2.png", 1500, 1080)
+image fire3 = im.Scale("images/불3.png", 1500, 1080)
+image fire4 = im.Scale("images/불4.png", 1500, 1080)
 
 
+# character들
+define conan = Character('에도가와 코난', color="#26619C")
+define agasa = Character('아가사 박사님', color="#6D5E7D")
+define mitsuhiko = Character('츠부라야 미츠히코', color="#5CB174")
+define ayumi = Character('요시다 아유미', color="#ED6B7C")
+define genta = Character('코지마 겐타', color="#B8860B")
+define mistery_man1 = Character('수상한 남자 1', color="#FFFFFF")
+define mistery_man2 = Character('수상한 남자 2', color="#FFFFFF")
 
+
+init python:
+    import pygame
+
+    def ring_correct():
+        renpy.hide_screen("tree_ring_puzzle")
+        renpy.jump("after_tree_ring")
+        return
+    def ring_wrong():
+        return
+    def mz_success():
+        renpy.hide_screen("thief_balance")
+        renpy.jump("maze_success")
+    def mz_fail():
+        renpy.hide_screen("thief_balance")
+        renpy.jump("maze_fail")
+    def set_mouse_pos(x, y):
+        pygame.mouse.set_pos([x, y])
+
+
+# map button
 screen fixed_button:
     frame:
         align (0.9, 0.1)
@@ -72,18 +115,12 @@ screen map_screen:
     frame:
         align (0.5, 0.5)
         has vbox
-        add im.Scale("images/map.png", 1000, 700)
         textbutton "닫기" action Hide("map_screen")
+        add im.Scale("images/map.png", 1000, 700)
 
-transform moveleft:
-    xalign 1.0
-    linear 0.5 xalign 0.0
-
-transform moveright:
-    xalign 0.0
-    linear 0.5 xalign 1.0
 
 label conan_epi2:
+    play music "audio/cn22.mp3"
     scene black
 
     show scene1 with fade
@@ -98,7 +135,11 @@ label conan_epi2:
 
     scene black with fade
     stop sound fadeout 2.0
+    stop music fadeout 2.0
+
     "어딘가 익숙한 네명의 목소리가 들린다."
+
+    play music "audio/cn06.mp3" fadein 1.0
 
     show scene4 with fade
     ayumi "박사님, 이거 진짜 지도예요?"
@@ -106,7 +147,7 @@ label conan_epi2:
     mitsuhiko "그럼 정말 보물이 있는 거군요"
     agasa "그건 직접 가서 확인해 보렴"
 
-    show scene5 with fade
+    show scene5
     genta "반드시 보물을 찾고 말겠어"
     mitsuhiko "나도!"
     ayumi "아유미도!"
@@ -117,26 +158,42 @@ label conan_epi2:
     "또 코난에 빙의되었나보군"
     "그나저나 지도와 보물이라.. 뭘까?"
 
-    show scene6 with fade
-    conan "그런데 박사님, 저런 수상한 지도를 어디서 구하셨어요?"
+    $ question = None
+    menu:
+        "박사님께 질문해보기":
+            show scene6 with fade
+            conan "그런데 박사님, 저런 수상한 지도를 어디서 구하셨어요?"
+            show scene7 with fade
+            agasa "궁금하냐?"
+            agasa "끝까지 가 보면 알 수 있을 거다"
+            jump after_question
+        "그냥 조용히 가기":
+            jump after_question
 
-    show scene7 with fade
-    agasa "궁금하냐?"
-    agasa "끝까지 가 보면 알 수 있을 거다"
+label after_question:
+    scene black
 
     show scene8 with fade
     agasa "그럼 난 여기서 낚시를 하고 있을테니"
     agasa "너희는 실컷 즐기고 오렴"
 
+    stop music fadeout 2.0
+
     show screen fixed_button
+    "오른쪽 상단에있는 맵 버튼을 눌러 지도를 확인할 수 있습니다"
+    "지도를 확인하여 이 모험을 재밌게 즐겨보세요!"
 
     menu:
         "박사님과 더 대화해보기":
-            show white_tree with fade
+            show white with fade
             agasa "우리가 지금 있는 곳은 백골나무란다"
             agasa "우선 런던 다리를 향해 가 보거라"
             jump london_bridge
         "바로 출발하기":
+            ayumi "앗 그런데 어디부터 시작이지?"
+            mitsuhiko "코난, 우리가 지금 어디있는지 알겠어?"
+            conan "지도와 함께 주변을 살펴보자"
+            conan "분명 힌트가 있을거야"
             call screen quiz_wide
 
 
@@ -152,8 +209,8 @@ screen quiz_wide():
         add "bg quiz_wide" align (0.0, 0.0)
 
     text "화면을 뒤져 지금 있는 곳을 알아내세요" xpos 700 ypos 200
-    textbutton "정답 입력":
 
+    textbutton "정답 입력" xalign 0.5 yalign 0.3:
         action Jump("answer_input")
 
     use fixed_button
@@ -165,10 +222,11 @@ label answer_input:
     $ answer = renpy.input("정답을 입력하세요")
 
     if answer.strip() == "백골나무":
-        "그래, 우리는 지금 백골나무에 있어"
+        show white with fade
+        conan "우리는 지금 백골나무에 있어!"
         jump london_bridge
     else:
-        "아닌 것 같아. 다시 생각해보자"
+        conan "아닌 것 같아. 다시 생각해보자"
         call screen quiz_wide
 
 
@@ -188,7 +246,7 @@ label london_bridge:
     mitsuhiko "당연하지"
     conan "(그럴리가 있겠냐)"
 
-    show scene11 with fade
+    show london with fade
     menu:
         "런던 다리에 도착했다. 삐걱삐걱 소리가 들리는 듯 한데 어떻게 할까?"
         "빠르게 뛰어간다":
@@ -203,14 +261,12 @@ label london_bridge:
 
 
 label hand_of_devil:
-
     scene black
 
     show scene12 with fade
     mitsuhiko "이름이 런던 다리라서 떨어질까 봐 조마조마했어"
     conan "영화에서 이런 다리는 꼭 끊어지니까"
     "하하하하하하하하하!"
-
 
     play sound "audio/다리 끊어지는.mp3"
     show scene13 with fade
@@ -222,23 +278,24 @@ label hand_of_devil:
     conan "(박사님도 참 우리를 이렇게 위험한 곳에 오게 하시다니)"
     conan "(이제 어떻게 돌아가냐고요)"
 
-    show scene15 with fade
+    show devil with fade
+    pause 2.0
 
     show scene16 with fade
-    mistery_man3 "역시 이 근방은 나침반이 말을 안 듣네요"
-    mistery_man2 "그 녀석은 왜 이런 산속에 보물을 숨긴 거야?"
-    mistery_man3 "그 녀석은 미스터리물을 좋아했으니까요"
-    mistery_man2 "아무리 그래도 너무 지나쳐"
+    mistery_man2 "역시 이 근방은 나침반이 말을 안 듣네요"
+    mistery_man1 "그 녀석은 왜 이런 산속에 보물을 숨긴 거야?"
+    mistery_man2 "그 녀석은 미스터리물을 좋아했으니까요"
+    mistery_man1 "아무리 그래도 너무 지나쳐"
 
     show scene17 with fade
-    mistery_man2 "나 참, 지도에선 5그루던데 여긴 4그루뿐이야"
-    mistery_man2 "진짜 여기 맞아?"
-    mistery_man3 "그 녀석도 참 운이 없어요"
-    mistery_man3 "곧 보물이 손에 들어올 테데 사고로 죽다니 말이죠"
+    mistery_man1 "나 참, 지도에선 5그루던데 여긴 4그루뿐이야"
+    mistery_man1 "진짜 여기 맞아?"
+    mistery_man2 "그 녀석도 참 운이 없어요"
+    mistery_man2 "곧 보물이 손에 들어올 테데 사고로 죽다니 말이죠"
 
     show scene18 with fade
-    mistery_man2 "이봐, 중요한 보물이 걸려 있다고"
-    mistery_man2 "대답은 똑바로 해"
+    mistery_man1 "이봐, 중요한 보물이 걸려 있다고"
+    mistery_man1 "대답은 똑바로 해"
 
     menu:
         "수상한 남자들이 싸우고 있는 것 같다. 어떻게 할까?"
@@ -247,27 +304,27 @@ label hand_of_devil:
             conan "위험하잖아요 아저씨"
             ayumi "담뱃불은 잘 꺼서 버리셔야죠"
             conan "산불이라도 나면 어쩌시려고요"
-            mistery_man2 "너희들은 뭐냐?"
+            mistery_man1 "너희들은 뭐냐?"
             genta "저희는 어린이 탐정단이에요"
             show this_map with fade
             conan "(뭐야, 이 지도 엄청 비슷하게 생겼네)"
-            mistery_man2 "꼬맹이, 뭘 보는 거냐?"
+            mistery_man1 "꼬맹이, 뭘 보는 거냐?"
             conan "안 봤는데요"
             show op1 with fade
-            mistery_man2 "이봐, 가자"
-            mistery_man3 "가다니, 어디로요?"
-            mistery_man2 "잔말 말고 따라와"
-            mistery_man3 "빨리"
+            mistery_man1 "이봐, 가자"
+            mistery_man2 "가다니, 어디로요?"
+            mistery_man1 "잔말 말고 따라와"
+            mistery_man1 "빨리"
             mistery_man2 "아파요"
         "좀 더 지켜본다":
-            mistery_man3 "아이고, 알겠다고"
-            show that_map with fade
-            conan "(뭐야, 저 지도 엄청 비슷하게 생겼네)"
+            mistery_man2 "아이고, 알겠다고"
+            # show that_map with fade
+            # conan "(뭐야, 저 지도 엄청 비슷하게 생겼네)"
             show op2 with fade
-            mistery_man2 "이봐, 가자"
-            mistery_man3 "가다니, 어디로요?"
-            mistery_man2 "잔말 말고 따라와"
-            mistery_man3 "빨리"
+            mistery_man1 "이봐, 가자"
+            mistery_man2 "가다니, 어디로요?"
+            mistery_man1 "잔말 말고 따라와"
+            mistery_man1 "빨리"
             mistery_man2 "아파요"
 
     show scene19 with fade
@@ -287,28 +344,10 @@ label hand_of_devil:
     mitsuhiko "근데 나침반이 말을 안듣네"
     conan "여길 보면 돼"
 
+    play music "audio/cn19.mp3" 
+
     call screen tree_ring_puzzle
 
-
-
-init python:
-    import pygame
-
-    def ring_correct():
-        
-        renpy.hide_screen("tree_ring_puzzle")
-        renpy.jump("after_tree_ring")
-        return
-    def ring_wrong():
-        return
-    def mz_success():
-        renpy.hide_screen("thief_balance")
-        renpy.jump("maze_success")
-    def mz_fail():
-        renpy.hide_screen("thief_balance")
-        renpy.jump("maze_fail")
-    def set_mouse_pos(x, y):
-        pygame.mouse.set_pos([x, y])
 
 screen tree_ring_puzzle():
     modal True
@@ -320,8 +359,6 @@ screen tree_ring_puzzle():
         align (0.5, 0.5)
         xsize 1010
         ysize 800
-
-
 
         has fixed
         add im.Scale("images/나이테.jpg", 1000, 700) xalign 0.0 yalign 0.0
@@ -361,18 +398,20 @@ label after_tree_ring:
     mitsuhiko "그래서 어느 길로 가면 돼?"
     conan "지도 좀 줘봐"
 
+    show devil with fade
     "악마의 손 그 좁은 문으로 들어가라"
 
     show scene24 with fade
     conan "악마의 손은 왼손이니까 왼쪽의 두 길이겠지"
     conan "좁은 문으로 들어가라고 했으니까"
     conan "폭이 좁은 맨 왼쪽 길로 가면 돼"
+    stop music fadeout 2.0
 
     show scene25 with fade
-    mistery_man2 "어째서 저 녀석들이 저 지도를 가지고 있지?"
-    mistery_man3 "그나저나 똑똑한 꼬맹이네요"
-    mistery_man2 "아무튼 선수를 빼앗기지 않게 서두르지"
-    mistery_man3 "네"
+    mistery_man1 "어째서 저 녀석들이 저 지도를 가지고 있지?"
+    mistery_man2 "그나저나 똑똑한 꼬맹이네요"
+    mistery_man1 "아무튼 선수를 빼앗기지 않게 서두르지"
+    mistery_man2 "네"
 
     jump spotted_strap
 
@@ -380,6 +419,8 @@ label after_tree_ring:
 label spotted_strap:
     scene black
 
+    show spotted with fade
+    pause 2.0
     show scene26 with fade
     genta "아까 그 사람들 뭔가 수상했어"
     ayumi "맞아, 틀림없이 우리와 같은 보물을 찾고 있을 거야"
@@ -392,11 +433,10 @@ label spotted_strap:
 
     show scene28 with fade
     pause 1.0
-
     play sound "audio/splash.mp3"
     show scene29 with fade
+    # play sound "audio/splash.mp3"
     pause 2.0
-
 
     show scene30 with fade
     mitsuhiko "누가 좀 살려 주세요"
@@ -413,14 +453,37 @@ label spotted_strap:
 label foot_of_walton:
     scene black
 
+    show walton with fade
+    pause 2.0
     show scene33 with fade
     play sound "audio/not_matches.mp3"
     mitsuhiko "아무리 좋은 캠핑용 성냥도 젖으면 소용없네"
     genta "젠장, 모닥불을 피워서 젖은 옷을 말리려고 했는데"
     conan "할 수 있어! 가지고 있는걸 모아볼까?"
 
-    "모닥불 피우기~"
+    play music "audio/cn19.mp3"
+    call screen fire_game
+
+label after_fire:
+    scene black
+    show fire1 with fade
+    conan "손전등의 머리 부분을 빼서"
+    conan "반사판을 꺼낸 다음"
+    show fire2
+    conan "성냥을 반사판에 넣어"
+    show fire3
+    conan "그리고 이걸 태양을 향해 대고"
+    conan "빛을 모으면 돼"
+
+    show fire4 with fade
+    mitsuhiko "붙었다!"
+    ayumi "대단해, 코난"
+
+    window hide
     show scene34 with fade
+    pause 2.0
+
+    stop music fadeout 2.0
 
     show scene35 with fade
     mitsuhiko "그런데 정말 끝까지 찾아갈 수 있을까?"
@@ -431,11 +494,14 @@ label foot_of_walton:
     conan "지금 이 근처니까 이쪽으로 이렇게 돌아가면"
     conan "다음 목적지에 도착할 수 있을 거야"
     show scene37 with fade
-    genta "좋았어, 그럼 출발하자"
+    genta "좋았어, 그럼 출발하자!"
 
+    show thief with fade
+    pause 2.0
     call screen maze_announce  
 
 label maze_start:
+    play music "audio/cn24.mp3" 
     show screen thief_balance  
 
 screen maze_announce():
@@ -462,7 +528,6 @@ screen thief_balance():
 
         add im.Scale("images/image 4.png", 950, 900)
 
-
         imagebutton:
             idle im.Scale("images/maze_hover.png", 900, 900) xalign 0.5 yalign 0.5
 
@@ -470,7 +535,6 @@ screen thief_balance():
             action NullAction()
             hovered Function(mz_fail)
             unhovered NullAction()
-
 
         imagebutton:
             idle im.Scale("images/maze_exit.png", 50, 50)
@@ -494,8 +558,11 @@ label maze_success:
     show text "성공" at truecenter
     pause 2.0
     hide text
+    stop music fadeout 2.0
     jump vallet_of_weissmuller
 
 label vallet_of_weissmuller:
     scene black
+    show weissmuller with fade
+    pause 2.0
     jump start_mini_game
