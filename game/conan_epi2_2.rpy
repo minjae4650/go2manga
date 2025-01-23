@@ -86,7 +86,7 @@ image mem4 = im.Scale("images/mem4.png", 1500, 1080)
 
 
 # character들
-define conan = Character('코난', color="#c8ffc8")
+define conan = Character('코난', color="#26619C")
 define agasa = Character('아가사 박사님', color="#6D5E7D")
 define mitsuhiko = Character('츠부라야 미츠히코', color="#5CB174")
 define ayumi = Character('요시다 아유미', color="#ED6B7C")
