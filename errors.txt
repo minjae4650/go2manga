@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/conan2.rpy", line 905: expected 'simple_expression' not found.
-    linear 6 ypos
-                 ^
+File "game/conan3.rpy", line 36: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+    image scenes3_33 = im.Scale("images/scenes2/scenes
 
 Ren'Py Version: Ren'Py 8.3.4.24120703
-Thu Jan 23 03:59:36 2025
+Thu Jan 23 16:25:19 2025

@@ -25,6 +25,8 @@ label start:
             jump mystery1
         "2편":
             jump conan_start2
+        "3편":
+            jump conan_start3
         "게임 종료":
             return  # 게임 종료
 
