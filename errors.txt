@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/conan_epi2_2.rpy", line 368: expected 'image_name_component' not found.
+    show 
+         ^
+
+Ren'Py Version: Ren'Py 8.3.4.24120703
+Thu Jan 23 18:40:24 2025
